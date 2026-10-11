@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J&#x27;ai construit un outil qui trouve des bugs dans Kubernetes, gVisor et les outils de la NASA — Guillaume Marty</title>
+<meta name="description" content="Comment GSR, un outil d&#x27;analyse de code en Python, a trouvé et aidé à corriger des bugs dans Kubernetes, gVisor, LXD, Prometheus, NASA F´ et data.gouv.fr — et pourquoi l&#x27;IA n&#x27;y confirme jamais rien seule.">
+<meta property="og:title" content="J&#x27;ai construit un outil qui trouve des bugs dans Kubernetes, gVisor et les outils de la NASA">
+<meta property="og:description" content="Comment GSR, un outil d&#x27;analyse de code en Python, a trouvé et aidé à corriger des bugs dans Kubernetes, gVisor, LXD, Prometheus, NASA F´ et data.gouv.fr — et pourquoi l&#x27;IA n&#x27;y confirme jamais rien seule.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://lemoncondor.github.io/guillaume-marty/article-gsr.html">
+<link rel="canonical" href="https://lemoncondor.github.io/guillaume-marty/article-gsr.html">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "J'ai construit un outil qui trouve des bugs dans Kubernetes, gVisor et les outils de la NASA",
+ "description": "Comment GSR, un outil d'analyse de code en Python, a trouvé et aidé à corriger des bugs dans Kubernetes, gVisor, LXD, Prometheus, NASA F´ et data.gouv.fr — et pourquoi l'IA n'y confirme jamais rien seule.",
+ "inLanguage": "fr",
+ "datePublished": "2026-10-11",
+ "author": {
+  "@type": "Person",
+  "name": "Guillaume Marty",
+  "url": "https://lemoncondor.github.io/guillaume-marty/"
+ },
+ "mainEntityOfPage": "https://lemoncondor.github.io/guillaume-marty/article-gsr.html"
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0a;--border:#1c1c1c;--border2:#282828;--lime:#a3e635;--white:#f5f5f5;--muted:#555;--muted2:#888;--text:#e0e0e0;}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 3rem;border-bottom:1px solid var(--border);}
+nav a{font-family:'Space Mono',monospace;font-weight:700;font-size:0.85rem;color:var(--lime);text-decoration:none;}
+article{max-width:760px;margin:0 auto;padding:4rem 1.5rem 5rem;}
+.meta{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--muted2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.2rem;}
+h1{font-size:clamp(2rem,5vw,2.8rem);line-height:1.1;letter-spacing:-0.02em;color:var(--white);margin-bottom:2.5rem;}
+h2{font-size:1.5rem;color:var(--white);margin:3rem 0 1rem;letter-spacing:-0.01em;}
+h3{font-size:1.1rem;color:var(--lime);margin:2rem 0 0.8rem;}
+p,li{color:#c8c8c8;font-size:1rem;line-height:1.85;}
+p{margin-bottom:1.2rem;}
+ul,ol{margin:0 0 1.2rem 1.4rem;}
+li{margin-bottom:0.4rem;}
+strong{color:var(--white);}
+a{color:var(--lime);}
+code{font-family:'Space Mono',monospace;font-size:0.85em;background:#141414;border:1px solid var(--border2);padding:0.05rem 0.35rem;border-radius:3px;}
+pre{background:#111;border:1px solid var(--border2);padding:1.2rem;overflow-x:auto;margin-bottom:1.4rem;border-radius:3px;}
+pre code{background:none;border:none;padding:0;font-size:0.82rem;line-height:1.6;}
+table{width:100%;border-collapse:collapse;margin:1rem 0 1.6rem;font-size:0.9rem;display:block;overflow-x:auto;}
+th,td{border-bottom:1px solid var(--border2);padding:0.6rem 0.5rem;text-align:left;vertical-align:top;color:#c8c8c8;}
+th{color:var(--white);font-weight:600;}
+footer{padding:1.8rem 3rem;border-top:1px solid var(--border);font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--muted);}
+footer a{color:var(--lime);text-decoration:none;}
+@media(max-width:768px){nav,footer{padding:1rem 1.2rem;}article{padding:2.5rem 1rem 4rem;}}
+</style>
+</head>
+<body>
+<nav><a href="./">← GM_ · Guillaume Marty</a></nav>
+<article>
+<div class="meta">Article · 11 octobre 2026 · Guillaume Marty</div>
+<h1>J&#x27;ai construit un outil qui trouve des bugs dans Kubernetes, gVisor et les outils de la NASA</h1>
+<p>Je viens du réseau et du support : une licence en administration des réseaux et télécoms, puis un poste de technicien support chez Apple. Aujourd'hui, des mainteneurs de Kubernetes, de Google et de Canonical ont validé des correctifs que je leur ai proposés, et d'autres sont en revue chez Prometheus, à la NASA et chez data.gouv.fr.</p>
+<p>Entre les deux, j'ai construit un outil : <strong>GitHub Security Researcher (GSR)</strong>. Voici comment il fonctionne, ce qu'il a trouvé, et ce que j'en ai appris.</p>
+<h2>Le problème : trop d'alertes, pas assez de bugs</h2>
+<p>Les analyseurs de code produisent des centaines d'alertes plausibles. La plupart sont des faux positifs. Et depuis l'arrivée des LLM, c'est pire : une IA peut affirmer avec aplomb qu'un bout de code est vulnérable… ou se laisser manipuler par un commentaire planté dans le code qu'elle lit.</p>
+<p>Proposer ces alertes à des mainteneurs bénévoles, c'est leur faire perdre leur temps. Je voulais l'inverse : <strong>peu de résultats, mais des vrais</strong>.</p>
+<h2>Le principe : l'IA propose, les tests décident</h2>
+<p>GSR est un outil en ligne de commande en Python. Son pipeline sépare quatre étapes :</p>
+<ol>
+<li><strong>Détection</strong> : des scanners et des détecteurs statiques repèrent des sites suspects.</li>
+<li><strong>Analyse contextuelle</strong> : un LLM peut donner son avis, mais cet avis est stocké comme simple indice.</li>
+<li><strong>Preuves</strong> : chaque résultat accumule des preuves typées (flux de données, contexte de code, résultat de test…).</li>
+<li><strong>Décision</strong> : un moteur <strong>déterministe</strong> tranche entre <code>CONFIRMED</code>, <code>FALSE_POSITIVE</code> et <code>INCONCLUSIVE</code>.</li>
+</ol>
+<p>La règle centrale est inscrite dans le code et dans les tests : <strong>une analyse par LLM seule ne peut jamais produire <code>CONFIRMED</code></strong>. En cas de doute, le verdict est <code>INCONCLUSIVE</code>.</p>
+<p>L'outil traite aussi le contenu des dépôts analysés comme des données non fiables : il n'exécute jamais leur code, et le LLM tourne sans aucun outil, avec le contenu du dépôt encadré pour qu'il ne puisse pas être pris pour des instructions.</p>
+<h2>Des détecteurs pour de vrais bugs Go</h2>
+<p>Une grande partie du travail a été d'écrire des détecteurs pour des familles de bugs précises dans du code Go, en analysant la syntaxe avec tree-sitter. Par exemple, un motif qui revient très souvent dans les parseurs :</p>
+<pre><code class="language-go">parts := strings.SplitN(line, &quot;=&quot;, 2)
+key, value := parts[0], parts[1] // panic si la ligne ne contient pas &quot;=&quot;
+</code></pre>
+<p>Si la ligne lue ne contient pas le séparateur, <code>parts</code> n'a qu'un élément et le programme plante. Le détecteur repère ces accès, puis cherche une preuve qu'ils sont protégés : une vérification de longueur avant l'accès, un test de présence du séparateur, une sortie anticipée… Un accès protégé est écarté, avec la preuve de sa protection.</p>
+<p>D'autres familles sont venues de bugs réels : une vérification de longueur écrite <em>après</em> l'accès qu'elle devait protéger, une erreur de verrouillage ignorée suivie d'un déverrouillage qui peut paniquer, une valeur testée à <code>nil</code> avant que l'erreur qui l'accompagne soit lue.</p>
+<p>Chaque correction du détecteur passe par des tests : l'outil en compte aujourd'hui plus de 500.</p>
+<h2>Trois bugs, trois histoires</h2>
+<h3>Kubernetes : un plantage sur une configuration git</h3>
+<p>Le premier bug a été trouvé dans <strong>git-sync</strong>, un outil de l'écosystème Kubernetes : une clé de configuration git sans valeur faisait planter le programme. Test de reproduction, correctif, test de régression : la PR a été <strong>fusionnée</strong> (<a target="_blank" rel="noopener" href="https://github.com/kubernetes/git-sync/pull/1006">#1006</a>).</p>
+<h3>NASA : un fusionneur de code qui refusait du C++ valide</h3>
+<p>F´ (F Prime) est le framework de logiciel de vol de la NASA. Son outil <code>fprime-util impl --auto-merge</code> fusionne du code C++ généré avec le code écrit à la main, avec une règle d'or : ne jamais supprimer de code humain.</p>
+<p>Pour vérifier cette règle, j'ai écrit un test de propriétés : générer des milliers de corps de fonctions C++ et vérifier qu'après fusion, chaque ligne existante est toujours là. Sur 3 000 cas, aucune ligne n'était perdue. Mais du <strong>C++ parfaitement valide</strong> faisait échouer la fusion : une chaîne brute contenant un guillemet (<code>R"(say "hi)"</code>) ou un séparateur de chiffres (<code>1'000</code>). Le lexeur prenait l'apostrophe pour le début d'un caractère et perdait le fil des accolades.</p>
+<p>J'ai ouvert une <a target="_blank" rel="noopener" href="https://github.com/nasa/fprime/issues/6176">issue</a>, puis proposé un correctif avec six tests (<a target="_blank" rel="noopener" href="https://github.com/nasa/fprime-tools/pull/356">PR #356</a>, en revue).</p>
+<h3>data.gouv.fr : 17 mai 2020 devenait « toute l'année 2020 »</h3>
+<p><strong>udata</strong> est le logiciel derrière data.gouv.fr. Lorsqu'il moissonne des catalogues de données, il lit des dates de couverture temporelle. Pour savoir si une date désigne un jour, un mois ou une année, il comptait… les tirets. Résultat : <code>2020/05/17</code> ou <code>20200517</code> étaient interprétés comme l'année 2020 entière, sans aucun message d'erreur.</p>
+<p>Le correctif détecte les parties réellement présentes dans la date au lieu de compter les séparateurs (<a target="_blank" rel="noopener" href="https://github.com/opendatateam/udata/issues/4006">issue #4006</a>, <a target="_blank" rel="noopener" href="https://github.com/opendatateam/udata/pull/4007">PR #4007</a>, en revue).</p>
+<h2>Les résultats</h2>
+<table>
+<thead>
+<tr>
+<th>Projet</th>
+<th>Statut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kubernetes git-sync <a target="_blank" rel="noopener" href="https://github.com/kubernetes/git-sync/pull/1006">#1006</a></td>
+<td>fusionnée</td>
+</tr>
+<tr>
+<td>Google gVisor <a target="_blank" rel="noopener" href="https://github.com/google/gvisor/pull/15632">#15632</a></td>
+<td>approuvée par un mainteneur</td>
+</tr>
+<tr>
+<td>Canonical LXD <a target="_blank" rel="noopener" href="https://github.com/canonical/lxd/pull/19250">#19250</a></td>
+<td>approuvée par un mainteneur</td>
+</tr>
+<tr>
+<td>NASA F´ fprime-tools <a target="_blank" rel="noopener" href="https://github.com/nasa/fprime-tools/pull/356">#356</a></td>
+<td>en revue</td>
+</tr>
+<tr>
+<td>data.gouv.fr udata <a target="_blank" rel="noopener" href="https://github.com/opendatateam/udata/pull/4007">#4007</a></td>
+<td>en revue</td>
+</tr>
+<tr>
+<td>Prometheus node_exporter <a target="_blank" rel="noopener" href="https://github.com/prometheus/node_exporter/pull/3848">#3848</a>, procfs <a target="_blank" rel="noopener" href="https://github.com/prometheus/procfs/pull/880">#880</a>, mysqld_exporter <a target="_blank" rel="noopener" href="https://github.com/prometheus/mysqld_exporter/pull/1095">#1095</a></td>
+<td>en revue</td>
+</tr>
+<tr>
+<td>Google cAdvisor <a target="_blank" rel="noopener" href="https://github.com/google/cadvisor/pull/3947">#3947</a>, Kubernetes kube-state-metrics <a target="_blank" rel="noopener" href="https://github.com/kubernetes/kube-state-metrics/pull/3143">#3143</a></td>
+<td>en revue</td>
+</tr>
+</tbody>
+</table>
+<p>Ce sont des bugs fonctionnels et de robustesse, pas des failles de sécurité. La plupart ont été trouvés avec les détecteurs de GSR, les autres par relecture ciblée, fuzzing ou tests de propriétés.</p>
+<h2>Ce que j'ai appris</h2>
+<p><strong>Reproduire d'abord.</strong> Un motif suspect n'est pas un bug. Tant qu'un test n'échoue pas, je ne propose rien. Beaucoup de pistes prometteuses se sont révélées protégées, irréalistes ou déjà corrigées.</p>
+<p><strong>Chercher les doublons.</strong> Mon premier bug sur kube-state-metrics était déjà signalé. Depuis, chaque correctif passe par une vérification : le bug est-il toujours là sur la branche principale, une PR ouverte le corrige-t-elle déjà ?</p>
+<p><strong>Lire les règles de chaque projet.</strong> CLA à signer, <code>Signed-off-by</code> à ajouter soi-même, commits signés cryptographiquement, issue obligatoire avant la PR, déclaration de l'usage de l'IA… Chaque projet a ses règles, et les respecter compte autant que le code.</p>
+<p><strong>Utiliser l'IA comme un outil, pas comme un juge.</strong> J'ai développé GSR avec Claude Code, qui m'a fait gagner un temps énorme. Mais c'est toujours un test qui confirme un bug, jamais une IA.</p>
+<h2>Le code</h2>
+<p>GSR est open source, sous licence Apache-2.0 : <a target="_blank" rel="noopener" href="https://github.com/LemonCondor/github-security-researcher">https://github.com/LemonCondor/github-security-researcher</a></p>
+<p>Mon site : <a target="_blank" rel="noopener" href="https://lemoncondor.github.io/guillaume-marty/">https://lemoncondor.github.io/guillaume-marty/</a></p>
+<p>Je cherche aujourd'hui un poste en développement Python et IA appliquée, à La Rochelle ou à distance. Si ce travail vous parle, écrivez-moi.</p>
+</article>
+<footer><a href="./">Guillaume Marty</a> · Python · Automatisation · IA appliquée · La Rochelle</footer>
+</body>
+</html>

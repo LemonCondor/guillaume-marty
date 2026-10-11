@@ -18,6 +18,10 @@ Bugs fonctionnels et de robustesse trouvés, reproduits et corrigés, la plupart
 - data.gouv.fr (udata) : [issue #4006](https://github.com/opendatateam/udata/issues/4006) et [PR #4007](https://github.com/opendatateam/udata/pull/4007), ouverte.
 - Kubernetes kube-state-metrics [#3143](https://github.com/kubernetes/kube-state-metrics/pull/3143), Prometheus node_exporter [#3848](https://github.com/prometheus/node_exporter/pull/3848), procfs [#880](https://github.com/prometheus/procfs/pull/880), mysqld_exporter [#1095](https://github.com/prometheus/mysqld_exporter/pull/1095), Google cAdvisor [#3947](https://github.com/google/cadvisor/pull/3947) : ouvertes.
 
+## Article
+
+- [J'ai construit un outil qui trouve des bugs dans Kubernetes, gVisor et les outils de la NASA](https://lemoncondor.github.io/guillaume-marty/article-gsr.html) : fonctionnement de GSR, trois bugs détaillés (Kubernetes, NASA F´, data.gouv.fr) et leçons apprises.
+
 ## Liens
 
 - Site : https://lemoncondor.github.io/guillaume-marty/
