@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guillaume Marty — AI Engineer</title>
-<meta name="description" content="Guillaume Marty — AI engineer. Systèmes de trading autonomes, agents LLM et infrastructure AWS minimaliste. Bot Polymarket en production 24/7, détection smart-money, LLM locaux.">
-<meta property="og:title" content="Guillaume Marty — AI Engineer">
-<meta property="og:description" content="Systèmes de trading autonomes, agents LLM, infra AWS minimaliste. Projets en production réelle.">
+<title>Guillaume Marty — Python, automatisation &amp; IA appliquée</title>
+<meta name="description" content="Guillaume Marty — du support et de l'administration réseau au développement Python, à l'automatisation et à l'IA appliquée. Outil d'analyse de code GSR, correctifs open source (Kubernetes, Google, Prometheus, Canonical, NASA F´, data.gouv.fr).">
+<meta property="og:title" content="Guillaume Marty — Python, automatisation &amp; IA appliquée">
+<meta property="og:description" content="Outil d'analyse de code GSR et correctifs open source testés : Kubernetes, gVisor, Prometheus, LXD, NASA F´, data.gouv.fr.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://high-altitude-ai.github.io">
+<meta property="og:url" content="https://lemoncondor.github.io/high-altitude-ai.github.io/">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -341,6 +341,36 @@ footer{
 .rv{opacity:0;transform:translateY(18px);transition:opacity 0.6s ease,transform 0.6s ease;}
 .rv.on{opacity:1;transform:translateY(0);}
 
+/* FEATURED PROJECT */
+.proj-feature{border-left:2px solid var(--lime);padding-left:1.5rem;}
+.proj-points{list-style:none;margin:0 0 1.2rem;max-width:640px;}
+.proj-points li{color:var(--muted2);font-size:0.83rem;line-height:1.7;padding-left:1.1rem;position:relative;margin-bottom:0.3rem;}
+.proj-points li::before{content:'›';position:absolute;left:0;color:var(--lime);}
+.proj-points strong{color:var(--white);font-weight:600;}
+.proj-points code{font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--text);}
+.proj-links{display:flex;flex-direction:column;gap:0.5rem;}
+.s-private{background:rgba(255,255,255,0.04);color:var(--muted);border:1px dashed var(--border2);}
+.concepts{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.8rem;}
+.concepts a{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--muted2);text-decoration:none;border:1px solid var(--border2);padding:0.35rem 0.7rem;border-radius:2px;transition:color 0.2s,border-color 0.2s;}
+.concepts a:hover{color:var(--lime);border-color:rgba(163,230,53,0.3);}
+
+/* OPEN SOURCE */
+.oss-section{padding:5rem 3rem;border-bottom:1px solid var(--border);}
+.oss-intro{color:var(--muted2);font-size:0.88rem;line-height:1.85;max-width:760px;margin-bottom:2.5rem;}
+.oss-intro strong{color:var(--white);font-weight:600;}
+.oss-list{border-top:1px solid var(--border);}
+.oss-row{display:grid;grid-template-columns:190px 1fr 150px;gap:2rem;align-items:start;padding:1.4rem 0;border-bottom:1px solid var(--border);}
+.oss-repo{font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--white);line-height:1.5;}
+.oss-org{display:block;color:var(--muted);font-size:0.65rem;letter-spacing:0.05em;}
+.oss-what{color:var(--muted2);font-size:0.83rem;line-height:1.7;}
+.oss-what code{font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--text);}
+.oss-what a{color:var(--lime);text-decoration:none;font-family:'Space Mono',monospace;font-size:0.75rem;}
+.oss-what a:hover{text-decoration:underline;}
+.oss-status{justify-self:end;}
+.s-merged{background:rgba(163,230,53,0.12);color:var(--lime);border:1px solid rgba(163,230,53,0.35);}
+.s-approved{background:rgba(251,191,36,0.08);color:#fbbf24;border:1px solid rgba(251,191,36,0.25);}
+.oss-note{color:var(--muted);font-size:0.72rem;font-family:'Space Mono',monospace;margin-top:1.5rem;letter-spacing:0.03em;}
+
 /* MOBILE */
 @media(max-width:768px){
   nav{padding:0.9rem 1.2rem;}
@@ -348,7 +378,9 @@ footer{
   .hero{grid-template-columns:1fr;padding:5rem 1.2rem 3rem;}
   .hero-left{padding:0;border-right:none;}
   .hero-right{padding:2rem 0 0;gap:1.5rem;}
-  .stack-section,.exp-section,.proj-section{padding:3.5rem 1.2rem;}
+  .stack-section,.exp-section,.proj-section,.oss-section{padding:3.5rem 1.2rem;}
+  .oss-row{grid-template-columns:1fr;gap:0.6rem;}
+  .oss-status{justify-self:start;}
   .stack-row{grid-template-columns:repeat(2,1fr);}
   .exp-row{grid-template-columns:1fr;gap:0.5rem;}
   .proj-item{grid-template-columns:1fr;}
@@ -363,8 +395,9 @@ footer{
   <a class="nav-logo" href="#">GM_</a>
   <ul class="nav-menu">
     <li><a href="#stack">Stack</a></li>
-    <li><a href="#experience">Expérience</a></li>
+    <li><a href="#experience">Parcours</a></li>
     <li><a href="#projets">Projets</a></li>
+    <li><a href="#open-source">Open source</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
@@ -379,15 +412,18 @@ footer{
     <h1 class="hero-name">
       Guillaume<br><em>Marty</em>
     </h1>
-    <p class="hero-role">// AI ENGINEER &amp; BACKEND DEVELOPER</p>
+    <p class="hero-role">// PYTHON · AUTOMATISATION · IA APPLIQUÉE</p>
     <p class="hero-desc">
-      Basé en <strong>France</strong> — je conçois des systèmes IA end-to-end :
-      agents <strong>LLM</strong>, bots autonomes en production,
-      pipelines de données et infrastructure <strong>AWS</strong>.
+      Basé en <strong>France</strong>, formé à l'<strong>administration des réseaux et télécoms</strong>
+      et passé par le <strong>support technique chez Apple</strong>, je construis aujourd'hui des outils
+      en <strong>Python</strong> : automatisation, analyse de code et systèmes pilotés par <strong>IA</strong>.
+      J'ai trouvé, reproduit et corrigé des bugs dans des projets open source comme
+      <strong>Kubernetes</strong>, <strong>gVisor</strong>, <strong>Prometheus</strong>, <strong>LXD</strong>,
+      <strong>NASA F´</strong> et <strong>data.gouv.fr</strong>, en grande partie avec mon outil d'analyse GSR.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-main">Travaillons ensemble</a>
-      <a href="#projets" class="btn-outline">Voir les projets</a>
+      <a href="#open-source" class="btn-outline">Contributions open source</a>
     </div>
   </div>
 
@@ -403,11 +439,15 @@ footer{
       </div>
       <div class="info-row">
         <span class="info-label">Spécialité</span>
-        <span class="info-val">LLM · Agents · Infra AWS</span>
+        <span class="info-val">Python · Analyse de code · IA appliquée</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Formation</span>
+        <span class="info-val">Licence administration des réseaux &amp; télécoms</span>
       </div>
       <div class="info-row">
         <span class="info-label">GitHub</span>
-        <span class="info-val"><a href="https://github.com/high-altitude-ai" target="_blank">high-altitude-ai</a></span>
+        <span class="info-val"><a href="https://github.com/LemonCondor" target="_blank" rel="noopener">LemonCondor</a></span>
       </div>
       <div class="info-row">
         <span class="info-label">Email</span>
@@ -424,14 +464,14 @@ footer{
     <h2 class="sec-title">Stack <span>technique</span></h2>
   </div>
   <div class="stack-row rv">
-    <div class="sk"><span class="sk-icon">🐍</span><div class="sk-name">Python 3.12</div><div class="sk-detail">FastAPI · asyncio · Pydantic</div></div>
-    <div class="sk"><span class="sk-icon">🤖</span><div class="sk-name">LLM / Agents</div><div class="sk-detail">Groq · Ollama · Anthropic · RAG</div></div>
-    <div class="sk"><span class="sk-icon">☁️</span><div class="sk-name">AWS</div><div class="sk-detail">EC2 · S3 · IAM · Elastic IP</div></div>
+    <div class="sk"><span class="sk-icon">🐍</span><div class="sk-name">Python</div><div class="sk-detail">CLI · asyncio · SQLite · pytest</div></div>
+    <div class="sk"><span class="sk-icon">🔎</span><div class="sk-name">Analyse de code</div><div class="sk-detail">tree-sitter · Go · C++ · détecteurs statiques</div></div>
+    <div class="sk"><span class="sk-icon">🧪</span><div class="sk-name">Tests &amp; fuzzing</div><div class="sk-detail">tests de régression · go test -fuzz · tests de propriétés</div></div>
+    <div class="sk"><span class="sk-icon">🤖</span><div class="sk-name">IA &amp; agents</div><div class="sk-detail">Claude Code · LLM · Groq · Ollama</div></div>
+    <div class="sk"><span class="sk-icon">🔀</span><div class="sk-name">Git &amp; open source</div><div class="sk-detail">PR · revue · CLA/DCO · commits signés</div></div>
     <div class="sk"><span class="sk-icon">🐧</span><div class="sk-name">Linux</div><div class="sk-detail">systemd · bash · SSH · admin</div></div>
-    <div class="sk"><span class="sk-icon">🔷</span><div class="sk-name">PowerShell</div><div class="sk-detail">Automation · CI · infra scripts</div></div>
-    <div class="sk"><span class="sk-icon">⚡</span><div class="sk-name">FastAPI</div><div class="sk-detail">APIs prod · WebSocket · tasks</div></div>
-    <div class="sk"><span class="sk-icon">🗄️</span><div class="sk-name">Data &amp; APIs</div><div class="sk-detail">SQLite · REST · parsing · ETL</div></div>
-    <div class="sk"><span class="sk-icon">🛠️</span><div class="sk-name">DevOps</div><div class="sk-detail">Cloudflare · Nginx · monitoring</div></div>
+    <div class="sk"><span class="sk-icon">🌐</span><div class="sk-name">Réseaux</div><div class="sk-detail">TCP/IP · télécoms · diagnostic</div></div>
+    <div class="sk"><span class="sk-icon">☁️</span><div class="sk-name">AWS</div><div class="sk-detail">EC2 · Cloudflare Tunnel · monitoring</div></div>
   </div>
 </section>
 
@@ -439,46 +479,43 @@ footer{
 <section id="experience" class="exp-section">
   <div class="sec-header rv">
     <span class="sec-num">02 —</span>
-    <h2 class="sec-title">Mon <span>expérience</span></h2>
+    <h2 class="sec-title">Mon <span>parcours</span></h2>
   </div>
   <div class="rv">
 
     <div class="exp-row">
       <div>
+        <div class="exp-co">Aujourd'hui</div>
+        <div class="exp-pill p-lime">Projets personnels</div>
+      </div>
+      <div>
+        <div class="exp-role">Développement Python, automatisation &amp; IA appliquée</div>
+        <div class="exp-desc">Conception de mes propres outils : un analyseur de code qui repère, reproduit et aide à corriger des bugs dans des projets open source, et des systèmes automatisés pilotés par des données et des LLM. J'utilise Claude Code comme outil d'ingénierie : chaque résultat est reproduit par un test avant d'être proposé.</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Go</span><span class="tag">Tests</span><span class="tag">Fuzzing</span><span class="tag">Claude Code</span><span class="tag">Open source</span></div>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div>
         <div class="exp-co">Apple</div>
-        <div class="exp-period">2018 — 2021</div>
-        <div class="exp-pill p-lime">Récent</div>
+        <div class="exp-pill p-white">Expérience</div>
       </div>
       <div>
-        <div class="exp-role">Software Engineer — Automation &amp; AI</div>
-        <div class="exp-desc">Développement de pipelines d'automatisation et d'outils internes Python dans un environnement haute exigence. Contribution à des projets d'intégration IA, scripting avancé et gestion d'infrastructure. Standards de qualité, sécurité et revue de code stricts.</div>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Automation</span><span class="tag">CI/CD</span><span class="tag">Scripting</span><span class="tag">macOS</span></div>
-      </div>
-    </div>
-
-    <div class="exp-row">
-      <div>
-        <div class="exp-co">Sanofi</div>
-        <div class="exp-period">2021 — 2024</div>
-        <div class="exp-pill p-white">Pharma / Data</div>
-      </div>
-      <div>
-        <div class="exp-role">Développeur IA — Data &amp; Infrastructure</div>
-        <div class="exp-desc">Conception et déploiement de solutions d'automatisation dans un contexte réglementaire strict. Mise en place d'outils internes basés sur des LLM, pipelines de données structurées et infrastructure cloud AWS.</div>
-        <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">AWS</span><span class="tag">Data Pipeline</span><span class="tag">Linux</span></div>
+        <div class="exp-role">Technicien support</div>
+        <div class="exp-desc">Support technique et résolution de problèmes.</div>
+        <div class="tags"><span class="tag">Support</span><span class="tag">Diagnostic</span></div>
       </div>
     </div>
 
     <div class="exp-row">
       <div>
-        <div class="exp-co">Freelance</div>
-        <div class="exp-period">2025 — présent</div>
-        <div class="exp-pill p-lime">Indépendant</div>
+        <div class="exp-co">Formation</div>
+        <div class="exp-pill p-white">Licence</div>
       </div>
       <div>
-        <div class="exp-role">AI Engineer &amp; Backend Developer</div>
-        <div class="exp-desc">Développement de systèmes autonomes en production — bots de trading, APIs temps réel, agents LLM, outils CLI. Infrastructure AWS complète, monitoring et déploiement systemd 24/7.</div>
-        <div class="tags"><span class="tag">FastAPI</span><span class="tag">LLM</span><span class="tag">AWS EC2</span><span class="tag">WebSocket</span><span class="tag">Agents</span></div>
+        <div class="exp-role">Licence en administration des réseaux et télécommunications</div>
+        <div class="exp-desc">Bases en réseaux, systèmes et télécoms, sur lesquelles je m'appuie aujourd'hui en développement.</div>
+        <div class="tags"><span class="tag">Réseaux</span><span class="tag">Télécoms</span><span class="tag">Systèmes</span></div>
       </div>
     </div>
 
@@ -493,18 +530,29 @@ footer{
   </div>
 
   <div class="proj-item rv">
-    <div>
+    <div class="proj-feature">
       <div class="proj-meta">
-        <span class="proj-status s-open"><span class="s-dot"></span>Open Source</span>
-        <span class="collab-tag">★ collab. Léo Camus / NextGen Labs</span>
+        <span class="proj-status s-prod"><span class="s-dot"></span>Open source · v0.1.0</span>
+        <span class="collab-tag">Projet personnel · Apache-2.0</span>
       </div>
-      <div class="proj-title">CondorCode</div>
-      <div class="proj-sub">CLI coding agent · LLM local · alternative offline à Claude Code</div>
-      <div class="proj-desc">Agent de coding en ligne de commande qui tourne entièrement en local avec Ollama ou LM Studio. Repensé pour les modèles open-source (Qwen2.5-Coder, DeepSeek-Coder, CodeLlama). Lecture/écriture de fichiers, exécution shell, diff interactif, sessions multi-tours. Zéro cloud, zéro coût.</div>
-      <div class="tags" style="margin-bottom:0.8rem;"><span class="tag">Python</span><span class="tag">Ollama</span><span class="tag">LM Studio</span><span class="tag">CLI</span><span class="tag">Qwen2.5</span><span class="tag">DeepSeek</span></div>
+      <div class="proj-title">GitHub Security Researcher (GSR)</div>
+      <div class="proj-sub">Outil d'analyse de code · détection, reproduction et validation de bugs</div>
+      <div class="proj-desc">Outil en ligne de commande que j'ai conçu et développé en Python pour chercher des bugs et des failles dans du code open source, sans jamais prendre une alerte pour un résultat confirmé. C'est lui qui a permis de trouver la plupart des bugs de mes <a href="#open-source" style="color:var(--lime);text-decoration:none;">contributions open source</a>.</div>
+      <ul class="proj-points">
+        <li><strong>Détecteurs statiques pour Go</strong> (tree-sitter) : index non vérifiés après un découpage de chaîne, erreurs ignorées ou écrasées, vérifications de longueur trop tardives.</li>
+        <li><strong>Reproduction et tests de régression</strong> : chaque bug retenu est reproduit par un test qui échoue avant le correctif et passe après.</li>
+        <li><strong>Validation</strong> : preuves typées et moteur de décision déterministe ; une analyse par LLM seule ne peut jamais confirmer un résultat.</li>
+        <li><strong>En complément</strong> : fuzzing (<code>go test -fuzz</code>) et tests de propriétés ciblés sur des parseurs, par exemple l'analyseur C++ de l'outil de fusion de code de la NASA.</li>
+        <li><strong>Sécurité de l'outil</strong> : périmètre explicite, aucun code cible exécuté, contenu des dépôts traité comme des données non fiables. Plus de 500 tests automatisés.</li>
+        <li><strong>Développé avec Claude Code</strong>, utilisé comme outil d'ingénierie sous contrôle de tests.</li>
+      </ul>
+      <div class="tags" style="margin-bottom:0.8rem;"><span class="tag">Python</span><span class="tag">tree-sitter</span><span class="tag">Go</span><span class="tag">SQLite</span><span class="tag">pytest</span><span class="tag">Fuzzing</span><span class="tag">Claude Code</span></div>
       <div class="lang-row"><div class="lang-item"><span class="ldot" style="background:#3572A5"></span>Python</div></div>
     </div>
-    <a href="https://github.com/high-altitude-ai/condorcode" class="proj-link" target="_blank">↗ GitHub</a>
+    <div class="proj-links">
+      <a href="https://github.com/LemonCondor/github-security-researcher" class="proj-link" target="_blank" rel="noopener">↗ GitHub</a>
+      <a href="https://github.com/LemonCondor/github-security-researcher/releases/tag/v0.1.0" class="proj-link" target="_blank" rel="noopener">↗ Release</a>
+    </div>
   </div>
 
   <div class="proj-item rv">
@@ -519,7 +567,7 @@ footer{
       <div class="tags" style="margin-bottom:0.8rem;"><span class="tag">Python 3.12</span><span class="tag">FastAPI</span><span class="tag">Groq LLM</span><span class="tag">AWS EC2</span><span class="tag">WebSocket</span><span class="tag">SQLite</span></div>
       <div class="lang-row"><div class="lang-item"><span class="ldot" style="background:#3572A5"></span>Python</div></div>
     </div>
-    <a href="https://github.com/high-altitude-ai/polymarket-bot" class="proj-link" target="_blank">↗ GitHub</a>
+    <span class="proj-status s-private">Code privé</span>
   </div>
 
   <div class="proj-item rv">
@@ -533,13 +581,13 @@ footer{
       <div class="tags" style="margin-bottom:0.8rem;"><span class="tag">AWS EC2</span><span class="tag">systemd</span><span class="tag">fail2ban</span><span class="tag">Cloudflare Tunnel</span><span class="tag">Bash</span></div>
       <div class="lang-row"><div class="lang-item"><span class="ldot" style="background:#89e051"></span>Shell</div></div>
     </div>
-    <a href="https://github.com/high-altitude-ai/aws-trading-infra" class="proj-link" target="_blank">↗ GitHub</a>
+    <a href="https://github.com/LemonCondor/aws-trading-infra" class="proj-link" target="_blank" rel="noopener">↗ GitHub</a>
   </div>
 
   <div class="proj-item rv">
     <div>
       <div class="proj-meta">
-        <span class="proj-status s-open"><span class="s-dot"></span>Open Source</span>
+        <span class="proj-status s-open"><span class="s-dot"></span>Guide open source</span>
       </div>
       <div class="proj-title">Local LLM Rig</div>
       <div class="proj-sub">Guide hardware · GPU · inférence locale</div>
@@ -547,65 +595,93 @@ footer{
       <div class="tags" style="margin-bottom:0.8rem;"><span class="tag">GPU</span><span class="tag">CUDA</span><span class="tag">llama.cpp</span><span class="tag">Ollama</span><span class="tag">vLLM</span></div>
       <div class="lang-row"><div class="lang-item"><span class="ldot" style="background:#083fa1"></span>Docs</div></div>
     </div>
-    <a href="https://github.com/high-altitude-ai/local-llm-rig" class="proj-link" target="_blank">↗ GitHub</a>
+    <a href="https://github.com/LemonCondor/local-llm-rig" class="proj-link" target="_blank" rel="noopener">↗ GitHub</a>
   </div>
 
   <div class="proj-item rv">
     <div>
       <div class="proj-meta">
-        <span class="proj-status s-open"><span class="s-dot"></span>Open Source</span>
+        <span class="proj-status s-wip"><span class="s-dot"></span>Concepts</span>
       </div>
-      <div class="proj-title">AlphaAgent</div>
-      <div class="proj-sub">Multi-agent LLM · détection d'opportunités · marchés de prédiction</div>
-      <div class="proj-desc">Pipeline 3 agents (Collecteur → Analyste → Décisionnaire) qui monitore en continu Polymarket et Manifold. Agrège news temps réel, historique et sentiment social pour scorer chaque marché. API REST pour intégration directe dans un bot.</div>
-      <div class="tags" style="margin-bottom:0.8rem;"><span class="tag">Python</span><span class="tag">LLM Agents</span><span class="tag">Polymarket API</span><span class="tag">FastAPI</span><span class="tag">SQLite</span></div>
-      <div class="lang-row"><div class="lang-item"><span class="ldot" style="background:#3572A5"></span>Python</div></div>
+      <div class="proj-title">Projets en conception</div>
+      <div class="proj-sub">Documents de conception · code non publié</div>
+      <div class="proj-desc">Idées documentées autour des agents LLM et de l'outillage pour systèmes autonomes : agent de code en local (CondorCode), pipeline multi-agents pour marchés de prédiction (AlphaAgent), agrégateur de données avec synthèses LLM (MarketPulse), module de gestion du risque (TradeGuard), supervision légère de processus (SkyWatch). Chaque dépôt décrit la conception visée ; le code n'est pas encore publié.</div>
+      <div class="concepts">
+        <a href="https://github.com/LemonCondor/condorcode" target="_blank" rel="noopener">condorcode</a>
+        <a href="https://github.com/LemonCondor/alpha-agent" target="_blank" rel="noopener">alpha-agent</a>
+        <a href="https://github.com/LemonCondor/marketpulse" target="_blank" rel="noopener">marketpulse</a>
+        <a href="https://github.com/LemonCondor/tradeguard" target="_blank" rel="noopener">tradeguard</a>
+        <a href="https://github.com/LemonCondor/skywatch" target="_blank" rel="noopener">skywatch</a>
+      </div>
     </div>
-    <a href="https://github.com/high-altitude-ai/alpha-agent" class="proj-link" target="_blank">↗ GitHub</a>
   </div>
 
-  <div class="proj-item rv">
-    <div>
-      <div class="proj-meta">
-        <span class="proj-status s-wip"><span class="s-dot"></span>In Progress</span>
-      </div>
-      <div class="proj-title">MarketPulse</div>
-      <div class="proj-sub">Agrégateur temps réel · 15+ sources · briefs LLM automatiques</div>
-      <div class="proj-desc">Plateforme d'agrégation de données financières et marchés de prédiction. Collecte Polymarket, Kalshi, RSS, Twitter/X, Reddit et génère des briefs de situation automatiques via LLM. Extraction d'entités, graph de relations, alertes webhook.</div>
-      <div class="tags" style="margin-bottom:0.8rem;"><span class="tag">Python</span><span class="tag">LLM Pipeline</span><span class="tag">Scraping</span><span class="tag">FastAPI</span><span class="tag">Graph</span></div>
-      <div class="lang-row"><div class="lang-item"><span class="ldot" style="background:#3572A5"></span>Python</div></div>
-    </div>
-    <a href="https://github.com/high-altitude-ai/marketpulse" class="proj-link" target="_blank">↗ GitHub</a>
-  </div>
+</section>
 
-  <div class="proj-item rv">
-    <div>
-      <div class="proj-meta">
-        <span class="proj-status s-open"><span class="s-dot"></span>Open Source</span>
-      </div>
-      <div class="proj-title">TradeGuard</div>
-      <div class="proj-sub">Risk management LLM · plug-and-play · bots de trading</div>
-      <div class="proj-desc">Module de risk management drop-in pour bots de trading Python. Filtre pré-trade LLM, sizing dynamique par profil de risque, circuit-breaker automatique sur drawdown. Fail-open par design — le bot continue si le LLM est indisponible.</div>
-      <div class="tags" style="margin-bottom:0.8rem;"><span class="tag">Python</span><span class="tag">Groq API</span><span class="tag">LLM</span><span class="tag">Risk Management</span><span class="tag">SQLite</span></div>
-      <div class="lang-row"><div class="lang-item"><span class="ldot" style="background:#3572A5"></span>Python</div></div>
-    </div>
-    <a href="https://github.com/high-altitude-ai/tradeguard" class="proj-link" target="_blank">↗ GitHub</a>
+<!-- OPEN SOURCE -->
+<section id="open-source" class="oss-section">
+  <div class="sec-header rv">
+    <span class="sec-num">04 —</span>
+    <h2 class="sec-title">Contributions <span>open source</span></h2>
   </div>
-
-  <div class="proj-item rv">
-    <div>
-      <div class="proj-meta">
-        <span class="proj-status s-open"><span class="s-dot"></span>Open Source</span>
-      </div>
-      <div class="proj-title">SkyWatch</div>
-      <div class="proj-sub">Monitoring temps réel · processus Python · dashboard WebSocket</div>
-      <div class="proj-desc">Outil léger de supervision de bots Python en production. Dashboard WebSocket live : CPU/RAM par process, logs structurés, alertes configurables, restart auto sur crash. Conçu pour VPS 512MB. Stack FastAPI + vanilla JS, zéro dépendance frontend.</div>
-      <div class="tags" style="margin-bottom:0.8rem;"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">WebSocket</span><span class="tag">psutil</span><span class="tag">systemd</span></div>
-      <div class="lang-row"><div class="lang-item"><span class="ldot" style="background:#3572A5"></span>Python</div><div class="lang-item"><span class="ldot" style="background:#f1e05a"></span>JavaScript</div></div>
+  <p class="oss-intro rv">Des bugs réels, trouvés pour la plupart avec <strong>GSR</strong> (détecteurs statiques et triage),
+  les autres par relecture ciblée, fuzzing ou tests de propriétés, puis
+  <strong>reproduits par un test qui échoue</strong>, corrigés par un <strong>patch minimal</strong> avec test de régression,
+  vérifiés contre les doublons et proposés selon les règles de chaque projet (CLA, DCO, commits signés, divulgation de l'usage de l'IA).
+  Il s'agit de bugs fonctionnels et de robustesse, pas de failles de sécurité.</p>
+  <div class="oss-list rv">
+    <div class="oss-row">
+      <div class="oss-repo">git-sync<span class="oss-org">kubernetes</span></div>
+      <div class="oss-what">Plantage (panic) quand la configuration git contient une clé sans valeur.<br><a href="https://github.com/kubernetes/git-sync/pull/1006" target="_blank" rel="noopener">PR #1006</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Fusionnée</span></div>
     </div>
-    <a href="https://github.com/high-altitude-ai/skywatch" class="proj-link" target="_blank">↗ GitHub</a>
+    <div class="oss-row">
+      <div class="oss-repo">gVisor<span class="oss-org">google</span></div>
+      <div class="oss-what"><code>runsc</code> : l'erreur de verrouillage de <code>Container.Update</code> était ignorée, puis le déverrouillage différé pouvait paniquer. L'erreur est maintenant renvoyée.<br><a href="https://github.com/google/gvisor/pull/15632" target="_blank" rel="noopener">PR #15632</a></div>
+      <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approuvée</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">LXD<span class="oss-org">canonical</span></div>
+      <div class="oss-what">Plantage du parseur de User-Agent quand le nom de produit ne contient que des espaces.<br><a href="https://github.com/canonical/lxd/pull/19250" target="_blank" rel="noopener">PR #19250</a></div>
+      <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approuvée</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">fprime-tools (F´)<span class="oss-org">nasa</span></div>
+      <div class="oss-what"><code>fprime-util impl --auto-merge</code> refusait du C++ valide (chaînes brutes, séparateurs de chiffres). Bug signalé, correctif avec 6 tests, vérifié par des tests de propriétés.<br><a href="https://github.com/nasa/fprime/issues/6176" target="_blank" rel="noopener">Issue #6176</a> · <a href="https://github.com/nasa/fprime-tools/pull/356" target="_blank" rel="noopener">PR #356</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>PR ouverte</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">udata (data.gouv.fr)<span class="oss-org">opendatateam</span></div>
+      <div class="oss-what">Les dates de couverture temporelle sans tirets (<code>2020/05/17</code>) devenaient l'année entière lors du moissonnage de catalogues CKAN.<br><a href="https://github.com/opendatateam/udata/issues/4006" target="_blank" rel="noopener">Issue #4006</a> · <a href="https://github.com/opendatateam/udata/pull/4007" target="_blank" rel="noopener">PR #4007</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>PR ouverte</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">kube-state-metrics<span class="oss-org">kubernetes</span></div>
+      <div class="oss-what">Les erreurs <code>valueFrom</code> des jauges dont la valeur est une map étaient ignorées sans message.<br><a href="https://github.com/kubernetes/kube-state-metrics/pull/3143" target="_blank" rel="noopener">PR #3143</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>PR ouverte</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">node_exporter<span class="oss-org">prometheus</span></div>
+      <div class="oss-what">Plantage sur une ligne <code>meminfo</code> NUMA trop courte : le nombre de champs est vérifié avant la lecture.<br><a href="https://github.com/prometheus/node_exporter/pull/3848" target="_blank" rel="noopener">PR #3848</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>PR ouverte</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">procfs<span class="oss-org">prometheus</span></div>
+      <div class="oss-what">Des erreurs au lieu de plantages sur les lignes trop courtes de <code>meminfo</code>, <code>ipvs</code> et <code>cpufreq</code>.<br><a href="https://github.com/prometheus/procfs/pull/880" target="_blank" rel="noopener">PR #880</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>PR ouverte</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">cAdvisor<span class="oss-org">google</span></div>
+      <div class="oss-what">Les lignes trop courtes de <code>/proc/diskstats</code> sont ignorées au lieu de provoquer un plantage.<br><a href="https://github.com/google/cadvisor/pull/3947" target="_blank" rel="noopener">PR #3947</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>PR ouverte</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">mysqld_exporter<span class="oss-org">prometheus</span></div>
+      <div class="oss-what">Le numéro de fichier binlog était lu après le premier point au lieu du dernier, donc 0 pour les noms contenant un point.<br><a href="https://github.com/prometheus/mysqld_exporter/pull/1095" target="_blank" rel="noopener">PR #1095</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>PR ouverte</span></div>
+    </div>
   </div>
-
+  <p class="oss-note rv">Statuts vérifiés sur GitHub le 11/10/2026 · « Approuvée » = validée par un mainteneur, pas encore fusionnée.</p>
 </section>
 
 <!-- CONTACT -->
@@ -623,17 +699,17 @@ footer{
       <div><div class="clink-label">LinkedIn</div><div class="clink-val">/in/guillaumemarty</div></div>
       <span class="clink-arrow">→</span>
     </a>
-    <a href="https://github.com/high-altitude-ai" target="_blank" class="clink">
-      <div><div class="clink-label">GitHub</div><div class="clink-val">github.com/high-altitude-ai</div></div>
+    <a href="https://github.com/LemonCondor" target="_blank" rel="noopener" class="clink">
+      <div><div class="clink-label">GitHub</div><div class="clink-val">github.com/LemonCondor</div></div>
       <span class="clink-arrow">→</span>
     </a>
   </div>
 </section>
 
 <footer>
-  <span>© 2025 Guillaume Marty</span>
-  <span>AI Engineer · Freelance · France</span>
-  <span><a href="https://github.com/high-altitude-ai" style="color:var(--lime);text-decoration:none;">high-altitude-ai</a></span>
+  <span>© 2026 Guillaume Marty</span>
+  <span>Python · Automatisation · IA appliquée · France</span>
+  <span><a href="https://github.com/LemonCondor" style="color:var(--lime);text-decoration:none;">LemonCondor</a></span>
 </footer>
 
 <script>
