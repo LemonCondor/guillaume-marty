@@ -1,28 +1,29 @@
 # Guillaume Marty
 
-> Développeur Python basé à La Rochelle (France), spécialisé en automatisation, analyse de code et IA appliquée.
-> Formation : licence en administration des réseaux et télécommunications. Expérience : technicien support chez Apple.
+> AI architect based in La Rochelle, France. Background: BSc in Network and Telecommunications Administration (m2i, Paris); Network Administrator, AppleCare Infrastructure at Apple, Cork (01/2019 to 07/2023); Systems and Network Administrator at Sanofi via Computacenter (10/2023 to 09/2025). Builds AI systems and code-analysis tools in Python.
 
-## Projet principal
+## Main project
 
-- [GitHub Security Researcher (GSR)](https://github.com/LemonCondor/github-security-researcher) : outil open source (Python, Apache-2.0) qu'il a conçu pour chercher des bugs dans du code open source. Détecteurs statiques pour Go (tree-sitter), reproduction de chaque bug par un test qui échoue, tests de régression, moteur de décision déterministe (une analyse par LLM seule ne peut jamais confirmer un résultat), plus de 500 tests automatisés. Développé avec Claude Code.
+- [GitHub Security Researcher (GSR)](https://github.com/LemonCondor/github-security-researcher): open-source tool (Python, Apache-2.0) he designed to find bugs in open-source code. Static detectors for Go (tree-sitter), reproduction of every bug with a failing test, regression tests, deterministic decision engine (LLM analysis alone can never confirm a finding), more than 500 automated tests.
 
-## Contributions open source (statuts vérifiés le 12/10/2026)
+## Open-source contributions (statuses checked on 2026-10-12)
 
-Bugs fonctionnels et de robustesse trouvés, reproduits et corrigés, la plupart avec GSR :
+Functional and robustness bugs found, reproduced and fixed, mostly with GSR:
 
-- Kubernetes git-sync : [PR #1006](https://github.com/kubernetes/git-sync/pull/1006), fusionnée.
-- Google gVisor : [PR #15632](https://github.com/google/gvisor/pull/15632), approuvée par un mainteneur.
-- Canonical LXD : [PR #19250](https://github.com/canonical/lxd/pull/19250), approuvée par un mainteneur.
-- NASA F´ (fprime-tools) : [issue #6176](https://github.com/nasa/fprime/issues/6176) et [PR #356](https://github.com/nasa/fprime-tools/pull/356), fermées par les mainteneurs le 11/10/2026 (fonction expérimentale, cas jugé non prioritaire).
-- data.gouv.fr (udata) : [issue #4006](https://github.com/opendatateam/udata/issues/4006) et [PR #4007](https://github.com/opendatateam/udata/pull/4007), ouverte.
-- Kubernetes kube-state-metrics [#3143](https://github.com/kubernetes/kube-state-metrics/pull/3143), Prometheus node_exporter [#3848](https://github.com/prometheus/node_exporter/pull/3848), procfs [#880](https://github.com/prometheus/procfs/pull/880), mysqld_exporter [#1095](https://github.com/prometheus/mysqld_exporter/pull/1095), Google cAdvisor [#3947](https://github.com/google/cadvisor/pull/3947) : ouvertes.
+- Kubernetes git-sync: [PR #1006](https://github.com/kubernetes/git-sync/pull/1006), merged.
+- Google gVisor: [PR #15632](https://github.com/google/gvisor/pull/15632), approved by a maintainer.
+- Canonical LXD: [PR #19250](https://github.com/canonical/lxd/pull/19250), approved by a maintainer.
+- NASA PO.DAAC l2ss-py: [issue #464](https://github.com/podaac/l2ss-py/issues/464) and [PR #465](https://github.com/podaac/l2ss-py/pull/465), open.
+- NASA harmony-py: [PR #155](https://github.com/nasa/harmony-py/pull/155), open.
+- data.gouv.fr (udata): [issue #4006](https://github.com/opendatateam/udata/issues/4006) and [PR #4007](https://github.com/opendatateam/udata/pull/4007), open.
+- Kubernetes kube-state-metrics [#3143](https://github.com/kubernetes/kube-state-metrics/pull/3143), Prometheus node_exporter [#3848](https://github.com/prometheus/node_exporter/pull/3848), procfs [#880](https://github.com/prometheus/procfs/pull/880), mysqld_exporter [#1095](https://github.com/prometheus/mysqld_exporter/pull/1095), Google cAdvisor [#3947](https://github.com/google/cadvisor/pull/3947): open.
+- NASA F´ (fprime-tools): [issue #6176](https://github.com/nasa/fprime/issues/6176) and [PR #356](https://github.com/nasa/fprime-tools/pull/356), closed by the maintainers (experimental feature, not prioritised).
 
-## Article
+## Article (French)
 
-- [J'ai construit un outil qui trouve des bugs dans Kubernetes, gVisor et les outils de la NASA](https://lemoncondor.github.io/guillaume-marty/article-gsr.html) : fonctionnement de GSR, trois bugs détaillés (Kubernetes, NASA F´, data.gouv.fr) et leçons apprises.
+- [J'ai construit un outil qui trouve des bugs dans Kubernetes, gVisor et les outils de la NASA](https://lemoncondor.github.io/guillaume-marty/article-gsr.html): how GSR works, three bugs in detail and lessons learned.
 
-## Liens
+## Links
 
-- Site : https://lemoncondor.github.io/guillaume-marty/
-- GitHub : https://github.com/LemonCondor
+- Website: https://lemoncondor.github.io/guillaume-marty/
+- GitHub: https://github.com/LemonCondor
