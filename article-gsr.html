@@ -89,7 +89,7 @@ key, value := parts[0], parts[1] // panic si la ligne ne contient pas &quot;=&qu
 <h3>NASA : un fusionneur de code qui refusait du C++ valide</h3>
 <p>F´ (F Prime) est le framework de logiciel de vol de la NASA. Son outil <code>fprime-util impl --auto-merge</code> fusionne du code C++ généré avec le code écrit à la main, avec une règle d'or : ne jamais supprimer de code humain.</p>
 <p>Pour vérifier cette règle, j'ai écrit un test de propriétés : générer des milliers de corps de fonctions C++ et vérifier qu'après fusion, chaque ligne existante est toujours là. Sur 3 000 cas, aucune ligne n'était perdue. Mais du <strong>C++ parfaitement valide</strong> faisait échouer la fusion : une chaîne brute contenant un guillemet (<code>R"(say "hi)"</code>) ou un séparateur de chiffres (<code>1'000</code>). Le lexeur prenait l'apostrophe pour le début d'un caractère et perdait le fil des accolades.</p>
-<p>J'ai ouvert une <a target="_blank" rel="noopener" href="https://github.com/nasa/fprime/issues/6176">issue</a>, puis proposé un correctif avec six tests (<a target="_blank" rel="noopener" href="https://github.com/nasa/fprime-tools/pull/356">PR #356</a>, en revue).</p>
+<p>J'ai ouvert une <a target="_blank" rel="noopener" href="https://github.com/nasa/fprime/issues/6176">issue</a>, puis proposé un correctif avec six tests (<a target="_blank" rel="noopener" href="https://github.com/nasa/fprime-tools/pull/356">PR #356</a>). Les mainteneurs l'ont fermée : la fonction est expérimentale et le cas jugé trop marginal pour leur temps de revue. Une leçon utile : un bug réel ne suffit pas, il faut aussi qu'il compte pour le projet.</p>
 <h3>data.gouv.fr : 17 mai 2020 devenait « toute l'année 2020 »</h3>
 <p><strong>udata</strong> est le logiciel derrière data.gouv.fr. Lorsqu'il moissonne des catalogues de données, il lit des dates de couverture temporelle. Pour savoir si une date désigne un jour, un mois ou une année, il comptait… les tirets. Résultat : <code>2020/05/17</code> ou <code>20200517</code> étaient interprétés comme l'année 2020 entière, sans aucun message d'erreur.</p>
 <p>Le correctif détecte les parties réellement présentes dans la date au lieu de compter les séparateurs (<a target="_blank" rel="noopener" href="https://github.com/opendatateam/udata/issues/4006">issue #4006</a>, <a target="_blank" rel="noopener" href="https://github.com/opendatateam/udata/pull/4007">PR #4007</a>, en revue).</p>
@@ -116,7 +116,7 @@ key, value := parts[0], parts[1] // panic si la ligne ne contient pas &quot;=&qu
 </tr>
 <tr>
 <td>NASA F´ fprime-tools <a target="_blank" rel="noopener" href="https://github.com/nasa/fprime-tools/pull/356">#356</a></td>
-<td>en revue</td>
+<td>fermée (fonction expérimentale, non prioritaire)</td>
 </tr>
 <tr>
 <td>data.gouv.fr udata <a target="_blank" rel="noopener" href="https://github.com/opendatateam/udata/pull/4007">#4007</a></td>
