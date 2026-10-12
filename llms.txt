@@ -1,6 +1,6 @@
 # Guillaume Marty
 
-> AI architect based in La Rochelle, France. Background: BSc in Network and Telecommunications Administration (m2i, Paris); Network Administrator, AppleCare Infrastructure at Apple, Cork (01/2019 to 07/2023); Systems and Network Administrator at Sanofi via Computacenter (10/2023 to 09/2025). Builds AI systems and code-analysis tools in Python.
+> AI architect based in La Rochelle, France. Background: BSc in Network and Telecommunications Administration (m2i, Paris); Mac Support Technician, AppleCare, at Apple, Cork (01/2019 to 07/2023); Systems and Network Administrator at Sanofi via Computacenter (10/2023 to 09/2025). Builds AI systems and code-analysis tools in Python.
 
 ## Main project
 
