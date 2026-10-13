@@ -6,7 +6,7 @@
 <title>Guillaume Marty — AI Architect</title>
 <meta name="description" content="Guillaume Marty — AI architect from an IT support and systems background (Apple, Sanofi). Builds AI systems and code-analysis tools in Python; open-source fixes in Kubernetes, gVisor, Prometheus, LXD, NASA projects and data.gouv.fr.">
 <meta property="og:title" content="Guillaume Marty — AI Architect">
-<meta property="og:description" content="AI systems and code-analysis tools in Python. Tested open-source fixes in Kubernetes, gVisor, Prometheus, LXD, NASA projects and data.gouv.fr.">
+<meta property="og:description" content="AI systems and code-analysis tools in Python. Tested open-source fixes in Kubernetes, Google gVisor, Tailscale, containerd, Celery, Netflix Metaflow, NASA projects and data.gouv.fr.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lemoncondor.github.io/guillaume-marty/">
 <link rel="canonical" href="https://lemoncondor.github.io/guillaume-marty/">
@@ -472,7 +472,7 @@ footer{
       developer tools in <strong>Python</strong>. I find, reproduce and fix bugs in open-source projects such as
       <strong>Kubernetes</strong>, <strong>gVisor</strong>, <strong>Prometheus</strong>, <strong>LXD</strong>,
       <strong>NASA</strong> tools and <strong>data.gouv.fr</strong>, largely with my code-analysis tool GSR:
-      one fix merged at Kubernetes, two approved at Google and Canonical.
+      fixes merged at Kubernetes and Google, approved at Canonical, and more under review at Tailscale, containerd, Celery and Netflix.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-main">Get in touch</a>
@@ -706,12 +706,52 @@ footer{
     <div class="oss-row">
       <div class="oss-repo">gVisor<span class="oss-org">google</span></div>
       <div class="oss-what"><code>runsc</code>: the lock error in <code>Container.Update</code> was ignored, then the deferred unlock could panic. The error is now returned.<br><a href="https://github.com/google/gvisor/pull/15632" target="_blank" rel="noopener">PR #15632</a></div>
-      <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
     </div>
     <div class="oss-row">
       <div class="oss-repo">LXD<span class="oss-org">canonical</span></div>
       <div class="oss-what">User-Agent parser panic when the product name contains only spaces.<br><a href="https://github.com/canonical/lxd/pull/19250" target="_blank" rel="noopener">PR #19250</a></div>
       <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">Tailscale<span class="oss-org">tailscale</span></div>
+      <div class="oss-what">Kubernetes operator: IPv6 port-map DNAT rules were written without brackets, so <code>ip6tables</code> read <code>addr:port</code> as another address.<br><a href="https://github.com/tailscale/tailscale/issues/21769" target="_blank" rel="noopener">Issue #21769</a> · <a href="https://github.com/tailscale/tailscale/pull/21770" target="_blank" rel="noopener">PR #21770</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">containerd<span class="oss-org">containerd (CNCF)</span></div>
+      <div class="oss-what">devmapper snapshotter: the error from reading a committed snapshot was overwritten, so <code>Mounts</code> returned no error and an empty mount.<br><a href="https://github.com/containerd/containerd/pull/14335" target="_blank" rel="noopener">PR #14335</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">Celery<span class="oss-org">celery</span></div>
+      <div class="oss-what"><code>repr()</code> of chains and groups mangled task names and arguments (<code>proj.tasks.mul(2.5)</code> shown as <code>projtasksmul(25)</code>).<br><a href="https://github.com/celery/celery/pull/10855" target="_blank" rel="noopener">PR #10855</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">Metaflow<span class="oss-org">netflix</span></div>
+      <div class="oss-what">AWS Batch tags whose value contains <code>=</code> crashed <code>batch step</code> and <code>step-functions create</code>.<br><a href="https://github.com/Netflix/metaflow/issues/3402" target="_blank" rel="noopener">Issue #3402</a> · <a href="https://github.com/Netflix/metaflow/pull/3403" target="_blank" rel="noopener">PR #3403</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">MetPy<span class="oss-org">unidata (UCAR)</span></div>
+      <div class="oss-what"><code>dewpoint</code> no longer inverted <code>saturation_vapor_pressure</code>; replaced by an exact Lambert&nbsp;W inversion of Ambaum (2020).<br><a href="https://github.com/Unidata/MetPy/pull/4153" target="_blank" rel="noopener">PR #4153</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">wiretap<span class="oss-org">sandia national labs</span></div>
+      <div class="oss-what">API URLs were built without brackets for the default IPv6 API address, which breaks every API call with Go 1.26 URL parsing.<br><a href="https://github.com/sandialabs/wiretap/pull/114" target="_blank" rel="noopener">PR #114</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">earthdata-varinfo<span class="oss-org">nasa</span></div>
+      <div class="oss-what">NetCDF-4 <code>valid_range</code> arrays were ignored, so <code>ValidRanges</code> was missing from generated UMM-Var records.<br><a href="https://github.com/nasa/earthdata-varinfo/pull/115" target="_blank" rel="noopener">PR #115</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">pynsee (INSEE)<span class="oss-org">inseefrlab</span></div>
+      <div class="oss-what">The local cache key ignored keyword names: <code>endPeriod</code> queries could return cached <code>startPeriod</code> data.<br><a href="https://github.com/InseeFrLab/pynsee/issues/310" target="_blank" rel="noopener">Issue #310</a> · <a href="https://github.com/InseeFrLab/pynsee/pull/311" target="_blank" rel="noopener">PR #311</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
     </div>
     <div class="oss-row">
       <div class="oss-repo">l2ss-py<span class="oss-org">podaac (NASA)</span></div>
@@ -759,7 +799,7 @@ footer{
       <div class="oss-status"><span class="proj-status s-private"><span class="s-dot"></span>Closed</span></div>
     </div>
   </div>
-  <p class="oss-note rv">Statuses checked on GitHub on 12/10/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
+  <p class="oss-note rv">Statuses checked on GitHub on 13/10/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
 </section>
 
 <!-- CONTACT -->
