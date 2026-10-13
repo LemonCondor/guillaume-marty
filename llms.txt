@@ -1,6 +1,6 @@
 # Guillaume Marty
 
-> AI and Python automation engineer based in La Rochelle, France. Background: BSc in Network and Telecommunications Administration (m2i, Paris); Mac Support Technician, AppleCare, at Apple, Cork (2015 to 07/2023); Systems and Network Administrator at Sanofi via Computacenter (10/2023 to 09/2025). Builds AI systems and code-analysis tools in Python.
+> AI and Python automation developer based in La Rochelle, France. Background: Network and Telecom Administrator diploma (m2i, Paris, 2016); Systems and Network Technician at Sanofi via Computacenter (2018 to 2022); Tier 2 Mac Support Technician, AppleCare, at Apple, Cork (2022 to 2025). Self-taught in AI and Python development since moving to La Rochelle in 2025. Builds AI systems and code-analysis tools in Python.
 
 ## Main project
 
