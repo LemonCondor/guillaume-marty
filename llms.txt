@@ -16,6 +16,7 @@ Functional and robustness bugs found, reproduced and fixed, mostly with GSR:
 - Apache Airflow: [PR #74631](https://github.com/apache/airflow/pull/74631), open.
 - AWS Powertools for Lambda (Python): [issue #8545](https://github.com/aws-powertools/powertools-lambda-python/issues/8545) and [PR #8546](https://github.com/aws-powertools/powertools-lambda-python/pull/8546), open.
 - Aqua Security Trivy: [PR #11398](https://github.com/aquasecurity/trivy/pull/11398), open.
+- Anchore Syft: [PR #5422](https://github.com/anchore/syft/pull/5422), open.
 - GoReleaser: [PR #7203](https://github.com/goreleaser/goreleaser/pull/7203), open.
 - Tailscale: [issue #21769](https://github.com/tailscale/tailscale/issues/21769) and [PR #21770](https://github.com/tailscale/tailscale/pull/21770), open.
 - containerd (CNCF): [PR #14335](https://github.com/containerd/containerd/pull/14335), open.
