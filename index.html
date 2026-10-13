@@ -472,7 +472,7 @@ footer{
       developer tools in <strong>Python</strong>. I find, reproduce and fix bugs in open-source projects such as
       <strong>Kubernetes</strong>, <strong>gVisor</strong>, <strong>Prometheus</strong>, <strong>LXD</strong>,
       <strong>NASA</strong> tools and <strong>data.gouv.fr</strong>, largely with my code-analysis tool GSR:
-      fixes merged at Kubernetes and Google, approved at Canonical, and more under review at Tailscale, containerd, Celery and Netflix.
+      fixes merged at Kubernetes and Google, approved at Canonical, and more under review at Apache Airflow, AWS, Tailscale, containerd, Trivy and Netflix.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-main">Get in touch</a>
@@ -712,6 +712,26 @@ footer{
       <div class="oss-repo">LXD<span class="oss-org">canonical</span></div>
       <div class="oss-what">User-Agent parser panic when the product name contains only spaces.<br><a href="https://github.com/canonical/lxd/pull/19250" target="_blank" rel="noopener">PR #19250</a></div>
       <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">Apache Airflow<span class="oss-org">apache</span></div>
+      <div class="oss-what">API server: with the gunicorn server type, an IPv6 host (<code>--host ::</code>) produced an unparsable bind address and the server failed to start.<br><a href="https://github.com/apache/airflow/pull/74631" target="_blank" rel="noopener">PR #74631</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">AWS Powertools<span class="oss-org">aws-powertools (Python)</span></div>
+      <div class="oss-what">AppSync Events router: a wildcard route like <code>/default/users/*</code> also matched <code>/default/usersettings</code> (the slice cut one character too many).<br><a href="https://github.com/aws-powertools/powertools-lambda-python/issues/8545" target="_blank" rel="noopener">Issue #8545</a> · <a href="https://github.com/aws-powertools/powertools-lambda-python/pull/8546" target="_blank" rel="noopener">PR #8546</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">Trivy<span class="oss-org">aquasecurity</span></div>
+      <div class="oss-what">npm license detection: packages declaring several licenses lost all of them in scan results.<br><a href="https://github.com/aquasecurity/trivy/pull/11398" target="_blank" rel="noopener">PR #11398</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">GoReleaser<span class="oss-org">goreleaser</span></div>
+      <div class="oss-what">Docker v2: a global <code>ARG</code> referencing another <code>ARG</code> was not expanded, so the base-image annotation kept <code>${...}</code>.<br><a href="https://github.com/goreleaser/goreleaser/pull/7203" target="_blank" rel="noopener">PR #7203</a></div>
+      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
     </div>
     <div class="oss-row">
       <div class="oss-repo">Tailscale<span class="oss-org">tailscale</span></div>
