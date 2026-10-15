@@ -472,7 +472,7 @@ footer{
       development as a self-taught, <strong>AI-native</strong> developer. I find, reproduce and fix bugs in open-source projects such as
       <strong>Kubernetes</strong>, <strong>gVisor</strong>, <strong>Prometheus</strong>, <strong>LXD</strong>,
       <strong>NASA</strong> tools and <strong>data.gouv.fr</strong>, largely with my code-analysis tool GSR:
-      fixes merged at Kubernetes, Google and INSEE, approved at Canonical, and more under review at Apache Airflow, AWS, Tailscale, containerd, Trivy and Netflix.
+      fixes merged at Kubernetes, Google and INSEE, approved at Canonical and NASA, and more under review at Apache Airflow, AWS, Tailscale, containerd, Trivy and Netflix.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-main">Get in touch</a>
@@ -719,6 +719,11 @@ footer{
       <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
     </div>
     <div class="oss-row">
+      <div class="oss-repo">harmony-py<span class="oss-org">nasa</span></div>
+      <div class="oss-what">EDR requests sent timezone-aware datetimes as local time labelled UTC, shifting the requested time window.<br><a href="https://github.com/nasa/harmony-py/pull/155" target="_blank" rel="noopener">PR #155</a></div>
+      <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
+    </div>
+    <div class="oss-row">
       <div class="oss-repo">Apache Airflow<span class="oss-org">apache</span></div>
       <div class="oss-what">API server: with the gunicorn server type, an IPv6 host (<code>--host ::</code>) produced an unparsable bind address and the server failed to start.<br><a href="https://github.com/apache/airflow/pull/74631" target="_blank" rel="noopener">PR #74631</a></div>
       <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
@@ -784,11 +789,6 @@ footer{
       <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
     </div>
     <div class="oss-row">
-      <div class="oss-repo">harmony-py<span class="oss-org">nasa</span></div>
-      <div class="oss-what">EDR requests sent timezone-aware datetimes as local time labelled UTC, shifting the requested time window.<br><a href="https://github.com/nasa/harmony-py/pull/155" target="_blank" rel="noopener">PR #155</a></div>
-      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
-    </div>
-    <div class="oss-row">
       <div class="oss-repo">udata (data.gouv.fr)<span class="oss-org">opendatateam</span></div>
       <div class="oss-what">Temporal coverage dates without dashes (<code>2020/05/17</code>) became the whole year when harvesting CKAN catalogs.<br><a href="https://github.com/opendatateam/udata/issues/4006" target="_blank" rel="noopener">Issue #4006</a> · <a href="https://github.com/opendatateam/udata/pull/4007" target="_blank" rel="noopener">PR #4007</a></div>
       <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
@@ -824,7 +824,7 @@ footer{
       <div class="oss-status"><span class="proj-status s-private"><span class="s-dot"></span>Closed</span></div>
     </div>
   </div>
-  <p class="oss-note rv">Statuses checked on GitHub on 14/10/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
+  <p class="oss-note rv">Statuses checked on GitHub on 15/10/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
 </section>
 
 <!-- CONTACT -->

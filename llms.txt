@@ -6,7 +6,7 @@
 
 - [GitHub Security Researcher (GSR)](https://github.com/LemonCondor/github-security-researcher): open-source tool (Python, Apache-2.0) he designed to find bugs in open-source code. Static detectors for Go (tree-sitter), reproduction of every bug with a failing test, regression tests, deterministic decision engine (LLM analysis alone can never confirm a finding), more than 500 automated tests.
 
-## Open-source contributions (statuses checked on 2026-10-14)
+## Open-source contributions (statuses checked on 2026-10-15)
 
 Functional and robustness bugs found, reproduced and fixed, mostly with GSR:
 
@@ -14,6 +14,7 @@ Functional and robustness bugs found, reproduced and fixed, mostly with GSR:
 - Google gVisor: [PR #15632](https://github.com/google/gvisor/pull/15632), merged.
 - INSEE pynsee: [issue #310](https://github.com/InseeFrLab/pynsee/issues/310) and [PR #311](https://github.com/InseeFrLab/pynsee/pull/311), merged.
 - Canonical LXD: [PR #19250](https://github.com/canonical/lxd/pull/19250), approved by a maintainer.
+- NASA harmony-py: [PR #155](https://github.com/nasa/harmony-py/pull/155), approved by a maintainer.
 - Apache Airflow: [PR #74631](https://github.com/apache/airflow/pull/74631), open.
 - AWS Powertools for Lambda (Python): [issue #8545](https://github.com/aws-powertools/powertools-lambda-python/issues/8545) and [PR #8546](https://github.com/aws-powertools/powertools-lambda-python/pull/8546), open.
 - Aqua Security Trivy: [PR #11398](https://github.com/aquasecurity/trivy/pull/11398), open.
@@ -27,7 +28,6 @@ Functional and robustness bugs found, reproduced and fixed, mostly with GSR:
 - Sandia National Laboratories wiretap: [PR #114](https://github.com/sandialabs/wiretap/pull/114), open.
 - NASA earthdata-varinfo: [PR #115](https://github.com/nasa/earthdata-varinfo/pull/115), open.
 - NASA PO.DAAC l2ss-py: [issue #464](https://github.com/podaac/l2ss-py/issues/464) and [PR #465](https://github.com/podaac/l2ss-py/pull/465), open.
-- NASA harmony-py: [PR #155](https://github.com/nasa/harmony-py/pull/155), open.
 - data.gouv.fr (udata): [issue #4006](https://github.com/opendatateam/udata/issues/4006) and [PR #4007](https://github.com/opendatateam/udata/pull/4007), open.
 - Kubernetes kube-state-metrics [#3143](https://github.com/kubernetes/kube-state-metrics/pull/3143), Prometheus node_exporter [#3848](https://github.com/prometheus/node_exporter/pull/3848), procfs [#880](https://github.com/prometheus/procfs/pull/880), mysqld_exporter [#1095](https://github.com/prometheus/mysqld_exporter/pull/1095), Google cAdvisor [#3947](https://github.com/google/cadvisor/pull/3947): open.
 - NASA F´ (fprime-tools): [issue #6176](https://github.com/nasa/fprime/issues/6176) and [PR #356](https://github.com/nasa/fprime-tools/pull/356), closed by the maintainers (experimental feature, not prioritised).
