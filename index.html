@@ -472,7 +472,7 @@ footer{
       development as a self-taught, <strong>AI-native</strong> developer. I find, reproduce and fix bugs in open-source projects such as
       <strong>Kubernetes</strong>, <strong>gVisor</strong>, <strong>Prometheus</strong>, <strong>LXD</strong>,
       <strong>NASA</strong> tools and <strong>data.gouv.fr</strong>, largely with my code-analysis tool GSR:
-      fixes merged at Kubernetes, Google and INSEE, approved at Canonical and NASA, and more under review at Apache Airflow, AWS, Tailscale, containerd, Trivy and Netflix.
+      fixes merged at Kubernetes, Google, AWS, INSEE and Celery, approved at Canonical and NASA, and more under review at Apache Airflow, Tailscale, containerd, Trivy and Netflix.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-main">Get in touch</a>
@@ -714,6 +714,16 @@ footer{
       <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
     </div>
     <div class="oss-row">
+      <div class="oss-repo">Celery<span class="oss-org">celery</span></div>
+      <div class="oss-what"><code>repr()</code> of chains and groups mangled task names and arguments (<code>proj.tasks.mul(2.5)</code> shown as <code>projtasksmul(25)</code>).<br><a href="https://github.com/celery/celery/pull/10855" target="_blank" rel="noopener">PR #10855</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">AWS Powertools<span class="oss-org">aws-powertools (Python)</span></div>
+      <div class="oss-what">AppSync Events router: a wildcard route like <code>/default/users/*</code> also matched <code>/default/usersettings</code> (the slice cut one character too many).<br><a href="https://github.com/aws-powertools/powertools-lambda-python/issues/8545" target="_blank" rel="noopener">Issue #8545</a> · <a href="https://github.com/aws-powertools/powertools-lambda-python/pull/8546" target="_blank" rel="noopener">PR #8546</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
+    </div>
+    <div class="oss-row">
       <div class="oss-repo">LXD<span class="oss-org">canonical</span></div>
       <div class="oss-what">User-Agent parser panic when the product name contains only spaces.<br><a href="https://github.com/canonical/lxd/pull/19250" target="_blank" rel="noopener">PR #19250</a></div>
       <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
@@ -726,11 +736,6 @@ footer{
     <div class="oss-row">
       <div class="oss-repo">Apache Airflow<span class="oss-org">apache</span></div>
       <div class="oss-what">API server: with the gunicorn server type, an IPv6 host (<code>--host ::</code>) produced an unparsable bind address and the server failed to start.<br><a href="https://github.com/apache/airflow/pull/74631" target="_blank" rel="noopener">PR #74631</a></div>
-      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
-    </div>
-    <div class="oss-row">
-      <div class="oss-repo">AWS Powertools<span class="oss-org">aws-powertools (Python)</span></div>
-      <div class="oss-what">AppSync Events router: a wildcard route like <code>/default/users/*</code> also matched <code>/default/usersettings</code> (the slice cut one character too many).<br><a href="https://github.com/aws-powertools/powertools-lambda-python/issues/8545" target="_blank" rel="noopener">Issue #8545</a> · <a href="https://github.com/aws-powertools/powertools-lambda-python/pull/8546" target="_blank" rel="noopener">PR #8546</a></div>
       <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
     </div>
     <div class="oss-row">
@@ -756,11 +761,6 @@ footer{
     <div class="oss-row">
       <div class="oss-repo">containerd<span class="oss-org">containerd (CNCF)</span></div>
       <div class="oss-what">devmapper snapshotter: the error from reading a committed snapshot was overwritten, so <code>Mounts</code> returned no error and an empty mount.<br><a href="https://github.com/containerd/containerd/pull/14335" target="_blank" rel="noopener">PR #14335</a></div>
-      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
-    </div>
-    <div class="oss-row">
-      <div class="oss-repo">Celery<span class="oss-org">celery</span></div>
-      <div class="oss-what"><code>repr()</code> of chains and groups mangled task names and arguments (<code>proj.tasks.mul(2.5)</code> shown as <code>projtasksmul(25)</code>).<br><a href="https://github.com/celery/celery/pull/10855" target="_blank" rel="noopener">PR #10855</a></div>
       <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
     </div>
     <div class="oss-row">
@@ -824,7 +824,7 @@ footer{
       <div class="oss-status"><span class="proj-status s-private"><span class="s-dot"></span>Closed</span></div>
     </div>
   </div>
-  <p class="oss-note rv">Statuses checked on GitHub on 15/10/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
+  <p class="oss-note rv">Statuses checked on GitHub on 16/10/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
 </section>
 
 <!-- CONTACT -->

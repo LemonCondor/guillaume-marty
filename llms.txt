@@ -6,23 +6,23 @@
 
 - [GitHub Security Researcher (GSR)](https://github.com/LemonCondor/github-security-researcher): open-source tool (Python, Apache-2.0) he designed to find bugs in open-source code. Static detectors for Go (tree-sitter), reproduction of every bug with a failing test, regression tests, deterministic decision engine (LLM analysis alone can never confirm a finding), more than 500 automated tests.
 
-## Open-source contributions (statuses checked on 2026-10-15)
+## Open-source contributions (statuses checked on 2026-10-16)
 
 Functional and robustness bugs found, reproduced and fixed, mostly with GSR:
 
 - Kubernetes git-sync: [PR #1006](https://github.com/kubernetes/git-sync/pull/1006), merged.
 - Google gVisor: [PR #15632](https://github.com/google/gvisor/pull/15632), merged.
 - INSEE pynsee: [issue #310](https://github.com/InseeFrLab/pynsee/issues/310) and [PR #311](https://github.com/InseeFrLab/pynsee/pull/311), merged.
+- Celery: [PR #10855](https://github.com/celery/celery/pull/10855), merged.
+- AWS Powertools for Lambda (Python): [issue #8545](https://github.com/aws-powertools/powertools-lambda-python/issues/8545) and [PR #8546](https://github.com/aws-powertools/powertools-lambda-python/pull/8546), merged.
 - Canonical LXD: [PR #19250](https://github.com/canonical/lxd/pull/19250), approved by a maintainer.
 - NASA harmony-py: [PR #155](https://github.com/nasa/harmony-py/pull/155), approved by a maintainer.
 - Apache Airflow: [PR #74631](https://github.com/apache/airflow/pull/74631), open.
-- AWS Powertools for Lambda (Python): [issue #8545](https://github.com/aws-powertools/powertools-lambda-python/issues/8545) and [PR #8546](https://github.com/aws-powertools/powertools-lambda-python/pull/8546), open.
 - Aqua Security Trivy: [PR #11398](https://github.com/aquasecurity/trivy/pull/11398), open.
 - Anchore Syft: [PR #5422](https://github.com/anchore/syft/pull/5422), open.
 - GoReleaser: [PR #7203](https://github.com/goreleaser/goreleaser/pull/7203), open.
 - Tailscale: [issue #21769](https://github.com/tailscale/tailscale/issues/21769) and [PR #21770](https://github.com/tailscale/tailscale/pull/21770), open.
 - containerd (CNCF): [PR #14335](https://github.com/containerd/containerd/pull/14335), open.
-- Celery: [PR #10855](https://github.com/celery/celery/pull/10855), open.
 - Netflix Metaflow: [issue #3402](https://github.com/Netflix/metaflow/issues/3402) and [PR #3403](https://github.com/Netflix/metaflow/pull/3403), open.
 - Unidata MetPy: [PR #4153](https://github.com/Unidata/MetPy/pull/4153), open.
 - Sandia National Laboratories wiretap: [PR #114](https://github.com/sandialabs/wiretap/pull/114), open.
