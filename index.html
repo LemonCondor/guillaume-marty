@@ -472,7 +472,7 @@ footer{
       development as a self-taught, <strong>AI-native</strong> developer. I find, reproduce and fix bugs in open-source projects such as
       <strong>Kubernetes</strong>, <strong>gVisor</strong>, <strong>Prometheus</strong>, <strong>LXD</strong>,
       <strong>NASA</strong> tools and <strong>data.gouv.fr</strong>, largely with my code-analysis tool GSR:
-      fixes merged at Kubernetes, Google, AWS, INSEE and Celery, approved at Canonical and NASA, and more under review at Apache Airflow, Tailscale, containerd, Trivy and Netflix.
+      fixes merged at Kubernetes, Google, AWS, INSEE and Celery, approved at Canonical, NASA and pydata/xarray, and more under review at Apache Airflow, Tailscale, containerd, Trivy and Netflix.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-main">Get in touch</a>
@@ -734,6 +734,11 @@ footer{
       <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
     </div>
     <div class="oss-row">
+      <div class="oss-repo">xarray<span class="oss-org">pydata</span></div>
+      <div class="oss-what">Encoding a string variable with a <code>char_dim_name</code> like <code>n4_chars</code> dropped everything after the number (<code>n4</code>); the suffix is now kept and only the length number is updated.<br><a href="https://github.com/pydata/xarray/pull/11757" target="_blank" rel="noopener">PR #11757</a></div>
+      <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
+    </div>
+    <div class="oss-row">
       <div class="oss-repo">Apache Airflow<span class="oss-org">apache</span></div>
       <div class="oss-what">API server: with the gunicorn server type, an IPv6 host (<code>--host ::</code>) produced an unparsable bind address and the server failed to start.<br><a href="https://github.com/apache/airflow/pull/74631" target="_blank" rel="noopener">PR #74631</a></div>
       <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
@@ -824,7 +829,7 @@ footer{
       <div class="oss-status"><span class="proj-status s-private"><span class="s-dot"></span>Closed</span></div>
     </div>
   </div>
-  <p class="oss-note rv">Statuses checked on GitHub on 16/10/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
+  <p class="oss-note rv">Statuses checked on GitHub on 20/10/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
 </section>
 
 <!-- CONTACT -->
