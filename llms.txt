@@ -15,13 +15,14 @@ Functional and robustness bugs found, reproduced and fixed, mostly with GSR:
 - INSEE pynsee: [issue #310](https://github.com/InseeFrLab/pynsee/issues/310) and [PR #311](https://github.com/InseeFrLab/pynsee/pull/311), merged.
 - Celery: [PR #10855](https://github.com/celery/celery/pull/10855), merged.
 - AWS Powertools for Lambda (Python): [issue #8545](https://github.com/aws-powertools/powertools-lambda-python/issues/8545) and [PR #8546](https://github.com/aws-powertools/powertools-lambda-python/pull/8546), merged.
+- Prometheus mysqld_exporter: [PR #1095](https://github.com/prometheus/mysqld_exporter/pull/1095), merged.
+- GoReleaser: [PR #7203](https://github.com/goreleaser/goreleaser/pull/7203), merged.
 - Canonical LXD: [PR #19250](https://github.com/canonical/lxd/pull/19250), approved by a maintainer.
 - NASA harmony-py: [PR #155](https://github.com/nasa/harmony-py/pull/155), approved by a maintainer.
 - pydata xarray: [PR #11757](https://github.com/pydata/xarray/pull/11757), approved by a maintainer.
 - Apache Airflow: [PR #74631](https://github.com/apache/airflow/pull/74631), open.
 - Aqua Security Trivy: [PR #11398](https://github.com/aquasecurity/trivy/pull/11398), open.
 - Anchore Syft: [PR #5422](https://github.com/anchore/syft/pull/5422), open.
-- GoReleaser: [PR #7203](https://github.com/goreleaser/goreleaser/pull/7203), open.
 - Tailscale: [issue #21769](https://github.com/tailscale/tailscale/issues/21769) and [PR #21770](https://github.com/tailscale/tailscale/pull/21770), open.
 - containerd (CNCF): [PR #14335](https://github.com/containerd/containerd/pull/14335), open.
 - Netflix Metaflow: [issue #3402](https://github.com/Netflix/metaflow/issues/3402) and [PR #3403](https://github.com/Netflix/metaflow/pull/3403), open.
@@ -30,7 +31,7 @@ Functional and robustness bugs found, reproduced and fixed, mostly with GSR:
 - NASA earthdata-varinfo: [PR #115](https://github.com/nasa/earthdata-varinfo/pull/115), open.
 - NASA PO.DAAC l2ss-py: [issue #464](https://github.com/podaac/l2ss-py/issues/464) and [PR #465](https://github.com/podaac/l2ss-py/pull/465), open.
 - data.gouv.fr (udata): [issue #4006](https://github.com/opendatateam/udata/issues/4006) and [PR #4007](https://github.com/opendatateam/udata/pull/4007), open.
-- Kubernetes kube-state-metrics [#3143](https://github.com/kubernetes/kube-state-metrics/pull/3143), Prometheus node_exporter [#3848](https://github.com/prometheus/node_exporter/pull/3848), procfs [#880](https://github.com/prometheus/procfs/pull/880), mysqld_exporter [#1095](https://github.com/prometheus/mysqld_exporter/pull/1095), Google cAdvisor [#3947](https://github.com/google/cadvisor/pull/3947): open.
+- Kubernetes kube-state-metrics [#3143](https://github.com/kubernetes/kube-state-metrics/pull/3143), Prometheus node_exporter [#3848](https://github.com/prometheus/node_exporter/pull/3848), procfs [#880](https://github.com/prometheus/procfs/pull/880), Google cAdvisor [#3947](https://github.com/google/cadvisor/pull/3947): open.
 - NASA F´ (fprime-tools): [issue #6176](https://github.com/nasa/fprime/issues/6176) and [PR #356](https://github.com/nasa/fprime-tools/pull/356), closed by the maintainers (experimental feature, not prioritised).
 
 ## Article (French)

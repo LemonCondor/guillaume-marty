@@ -472,7 +472,7 @@ footer{
       development as a self-taught, <strong>AI-native</strong> developer. I find, reproduce and fix bugs in open-source projects such as
       <strong>Kubernetes</strong>, <strong>gVisor</strong>, <strong>Prometheus</strong>, <strong>LXD</strong>,
       <strong>NASA</strong> tools and <strong>data.gouv.fr</strong>, largely with my code-analysis tool GSR:
-      fixes merged at Kubernetes, Google, AWS, INSEE and Celery, approved at Canonical, NASA and pydata/xarray, and more under review at Apache Airflow, Tailscale, containerd, Trivy and Netflix.
+      fixes merged at Kubernetes, Google, AWS, Prometheus, GoReleaser, INSEE and Celery, approved at Canonical, NASA and pydata/xarray, and more under review at Apache Airflow, Tailscale, containerd, Trivy and Netflix.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-main">Get in touch</a>
@@ -724,6 +724,16 @@ footer{
       <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
     </div>
     <div class="oss-row">
+      <div class="oss-repo">GoReleaser<span class="oss-org">goreleaser</span></div>
+      <div class="oss-what">Docker v2: a global <code>ARG</code> referencing another <code>ARG</code> was not expanded, so the base-image annotation kept <code>${...}</code>.<br><a href="https://github.com/goreleaser/goreleaser/pull/7203" target="_blank" rel="noopener">PR #7203</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">mysqld_exporter<span class="oss-org">prometheus</span></div>
+      <div class="oss-what">The binlog file number was read after the first dot instead of the last, giving 0 for dotted base names.<br><a href="https://github.com/prometheus/mysqld_exporter/pull/1095" target="_blank" rel="noopener">PR #1095</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
+    </div>
+    <div class="oss-row">
       <div class="oss-repo">LXD<span class="oss-org">canonical</span></div>
       <div class="oss-what">User-Agent parser panic when the product name contains only spaces.<br><a href="https://github.com/canonical/lxd/pull/19250" target="_blank" rel="noopener">PR #19250</a></div>
       <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
@@ -751,11 +761,6 @@ footer{
     <div class="oss-row">
       <div class="oss-repo">Syft<span class="oss-org">anchore</span></div>
       <div class="oss-what">SBOM generator: Go binaries built with a pre-release version (<code>v1.28.0-rc.1</code>) were reported as <code>v1.28.0-rc</code>, which skews vulnerability matching.<br><a href="https://github.com/anchore/syft/pull/5422" target="_blank" rel="noopener">PR #5422</a></div>
-      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
-    </div>
-    <div class="oss-row">
-      <div class="oss-repo">GoReleaser<span class="oss-org">goreleaser</span></div>
-      <div class="oss-what">Docker v2: a global <code>ARG</code> referencing another <code>ARG</code> was not expanded, so the base-image annotation kept <code>${...}</code>.<br><a href="https://github.com/goreleaser/goreleaser/pull/7203" target="_blank" rel="noopener">PR #7203</a></div>
       <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
     </div>
     <div class="oss-row">
@@ -819,17 +824,12 @@ footer{
       <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
     </div>
     <div class="oss-row">
-      <div class="oss-repo">mysqld_exporter<span class="oss-org">prometheus</span></div>
-      <div class="oss-what">The binlog file number was read after the first dot instead of the last, giving 0 for dotted base names.<br><a href="https://github.com/prometheus/mysqld_exporter/pull/1095" target="_blank" rel="noopener">PR #1095</a></div>
-      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
-    </div>
-    <div class="oss-row">
       <div class="oss-repo">fprime-tools (F´)<span class="oss-org">nasa</span></div>
       <div class="oss-what"><code>fprime-util impl --auto-merge</code> rejected valid C++ (raw strings, digit separators). Closed by the maintainers: experimental feature, case not prioritised.<br><a href="https://github.com/nasa/fprime/issues/6176" target="_blank" rel="noopener">Issue #6176</a> · <a href="https://github.com/nasa/fprime-tools/pull/356" target="_blank" rel="noopener">PR #356</a></div>
       <div class="oss-status"><span class="proj-status s-private"><span class="s-dot"></span>Closed</span></div>
     </div>
   </div>
-  <p class="oss-note rv">Statuses checked on GitHub on 20/10/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
+  <p class="oss-note rv">Statuses checked on GitHub on 21/10/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
 </section>
 
 <!-- CONTACT -->
