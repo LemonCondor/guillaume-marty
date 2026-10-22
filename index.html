@@ -472,7 +472,7 @@ footer{
       development as a self-taught, <strong>AI-native</strong> developer. I find, reproduce and fix bugs in open-source projects such as
       <strong>Kubernetes</strong>, <strong>gVisor</strong>, <strong>Prometheus</strong>, <strong>LXD</strong>,
       <strong>NASA</strong> tools and <strong>data.gouv.fr</strong>, largely with my code-analysis tool GSR:
-      fixes merged at Kubernetes, Google, AWS, Prometheus, GoReleaser, INSEE and Celery, approved at Canonical, NASA and pydata/xarray, and more under review at Apache Airflow, Tailscale, containerd, Trivy and Netflix.
+      fixes merged at Kubernetes, Google, AWS, Prometheus, GoReleaser, pydata/xarray, INSEE and Celery, approved at Canonical and NASA, and more under review at Apache Airflow, Tailscale, containerd, Trivy and Netflix.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-main">Get in touch</a>
@@ -739,6 +739,11 @@ footer{
       <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
     </div>
     <div class="oss-row">
+      <div class="oss-repo">xarray<span class="oss-org">pydata</span></div>
+      <div class="oss-what">Encoding a string variable with a <code>char_dim_name</code> like <code>n4_chars</code> dropped everything after the number (<code>n4</code>); the suffix is now kept and only the length number is updated.<br><a href="https://github.com/pydata/xarray/pull/11757" target="_blank" rel="noopener">PR #11757</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
+    </div>
+    <div class="oss-row">
       <div class="oss-repo">LXD<span class="oss-org">canonical</span></div>
       <div class="oss-what">User-Agent parser panic when the product name contains only spaces.<br><a href="https://github.com/canonical/lxd/pull/19250" target="_blank" rel="noopener">PR #19250</a></div>
       <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
@@ -746,11 +751,6 @@ footer{
     <div class="oss-row">
       <div class="oss-repo">harmony-py<span class="oss-org">nasa</span></div>
       <div class="oss-what">EDR requests sent timezone-aware datetimes as local time labelled UTC, shifting the requested time window.<br><a href="https://github.com/nasa/harmony-py/pull/155" target="_blank" rel="noopener">PR #155</a></div>
-      <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
-    </div>
-    <div class="oss-row">
-      <div class="oss-repo">xarray<span class="oss-org">pydata</span></div>
-      <div class="oss-what">Encoding a string variable with a <code>char_dim_name</code> like <code>n4_chars</code> dropped everything after the number (<code>n4</code>); the suffix is now kept and only the length number is updated.<br><a href="https://github.com/pydata/xarray/pull/11757" target="_blank" rel="noopener">PR #11757</a></div>
       <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
     </div>
     <div class="oss-row">
@@ -829,7 +829,7 @@ footer{
       <div class="oss-status"><span class="proj-status s-private"><span class="s-dot"></span>Closed</span></div>
     </div>
   </div>
-  <p class="oss-note rv">Statuses checked on GitHub on 21/10/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
+  <p class="oss-note rv">Statuses checked on GitHub on 22/10/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
 </section>
 
 <!-- CONTACT -->

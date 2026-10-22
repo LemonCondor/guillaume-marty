@@ -17,10 +17,10 @@ Functional and robustness bugs found, reproduced and fixed, mostly with GSR:
 - AWS Powertools for Lambda (Python): [issue #8545](https://github.com/aws-powertools/powertools-lambda-python/issues/8545) and [PR #8546](https://github.com/aws-powertools/powertools-lambda-python/pull/8546), merged.
 - Prometheus mysqld_exporter: [PR #1095](https://github.com/prometheus/mysqld_exporter/pull/1095), merged.
 - Prometheus procfs: [PR #880](https://github.com/prometheus/procfs/pull/880), merged.
+- pydata xarray: [PR #11757](https://github.com/pydata/xarray/pull/11757), merged.
 - GoReleaser: [PR #7203](https://github.com/goreleaser/goreleaser/pull/7203), merged.
 - Canonical LXD: [PR #19250](https://github.com/canonical/lxd/pull/19250), approved by a maintainer.
 - NASA harmony-py: [PR #155](https://github.com/nasa/harmony-py/pull/155), approved by a maintainer.
-- pydata xarray: [PR #11757](https://github.com/pydata/xarray/pull/11757), approved by a maintainer.
 - Apache Airflow: [PR #74631](https://github.com/apache/airflow/pull/74631), open.
 - Aqua Security Trivy: [PR #11398](https://github.com/aquasecurity/trivy/pull/11398), open.
 - Anchore Syft: [PR #5422](https://github.com/anchore/syft/pull/5422), open.
