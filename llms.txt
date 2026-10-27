@@ -1,12 +1,12 @@
 # Guillaume Marty
 
-> AI and Python automation developer based in La Rochelle, France. Background: Network and Telecom Administrator diploma (m2i, Paris, 2016); Systems and Network Technician at Sanofi via Computacenter (2018 to 2022); Tier 2 Mac Support Technician, AppleCare, at Apple, Cork (2022 to 2025). Self-taught in AI and Python development since moving to La Rochelle in 2025. Builds AI systems and code-analysis tools in Python.
+> AI and Python automation developer based in Fontenay-le-Comte (Vendée), France. Background: Network and Telecom Administrator diploma (m2i, Paris, 2016); Systems and Network Technician at Sanofi via Computacenter (2018 to 2022); Tier 2 Mac Support Technician, AppleCare, at Apple, Cork (2022 to 2025). Self-taught in AI and Python development since 2025. Builds AI systems and code-analysis tools in Python.
 
 ## Main project
 
 - [GitHub Security Researcher (GSR)](https://github.com/LemonCondor/github-security-researcher): open-source tool (Python, Apache-2.0) he designed to find bugs in open-source code. Static detectors for Go (tree-sitter), reproduction of every bug with a failing test, regression tests, deterministic decision engine (LLM analysis alone can never confirm a finding), more than 500 automated tests.
 
-## Open-source contributions (statuses checked on 2026-10-16)
+## Open-source contributions (statuses checked on 2026-10-27)
 
 Functional and robustness bugs found, reproduced and fixed, mostly with GSR:
 
@@ -19,6 +19,8 @@ Functional and robustness bugs found, reproduced and fixed, mostly with GSR:
 - Prometheus procfs: [PR #880](https://github.com/prometheus/procfs/pull/880), merged.
 - pydata xarray: [PR #11757](https://github.com/pydata/xarray/pull/11757), merged.
 - GoReleaser: [PR #7203](https://github.com/goreleaser/goreleaser/pull/7203), merged.
+- OpenTelemetry Python: [PR #5793](https://github.com/open-telemetry/opentelemetry-python/pull/5793), merged.
+- Pillow: [PR #10321](https://github.com/python-pillow/Pillow/pull/10321), merged.
 - Canonical LXD: [PR #19250](https://github.com/canonical/lxd/pull/19250), approved by a maintainer.
 - NASA harmony-py: [PR #155](https://github.com/nasa/harmony-py/pull/155), approved by a maintainer.
 - Apache Airflow: [PR #74631](https://github.com/apache/airflow/pull/74631), open.
