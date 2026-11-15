@@ -472,7 +472,7 @@ footer{
       development as a self-taught, <strong>AI-native</strong> developer. I find, reproduce and fix bugs in open-source projects such as
       <strong>Kubernetes</strong>, <strong>gVisor</strong>, <strong>Prometheus</strong>, <strong>LXD</strong>,
       <strong>NASA</strong> tools and <strong>data.gouv.fr</strong>, largely with my code-analysis tool GSR:
-      fixes merged at Kubernetes, Google, AWS, OpenTelemetry, Pillow, Prometheus, GoReleaser, pydata/xarray, INSEE and Celery, approved at Canonical and NASA, and more under review at Apache Airflow, Tailscale, containerd, Trivy and Netflix.
+      fixes merged at Kubernetes, Google, AWS, OpenTelemetry, Pillow, Prometheus, GoReleaser, pydata/xarray, INSEE, Celery, Canonical, Anchore, containerd, Mozilla AI and NASA (PO.DAAC), approved at NASA (harmony-py), and more under review at Apache Airflow, Tailscale, Trivy and Netflix.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-main">Get in touch</a>
@@ -705,7 +705,17 @@ footer{
     </div>
     <div class="oss-row">
       <div class="oss-repo">Pillow<span class="oss-org">python-pillow</span></div>
-      <div class="oss-what">TIFF <code>IFDRational</code>: arithmetic between two <code>IFDRational</code> values failed; both operands are now unwrapped.<br><a href="https://github.com/python-pillow/Pillow/pull/10321" target="_blank" rel="noopener">PR #10321</a></div>
+      <div class="oss-what">Three fixes: arithmetic between two TIFF <code>IFDRational</code> values failed; an XBM header with a non-numeric <code>#define</code> value now raises <code>SyntaxError</code>; the tRNS grey level is now scaled for 2-bit and 4-bit grayscale PNGs.<br><a href="https://github.com/python-pillow/Pillow/pull/10321" target="_blank" rel="noopener">PR #10321</a> · <a href="https://github.com/python-pillow/Pillow/pull/10319" target="_blank" rel="noopener">PR #10319</a> · <a href="https://github.com/python-pillow/Pillow/pull/10320" target="_blank" rel="noopener">PR #10320</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">opentelemetry-python-contrib<span class="oss-org">open-telemetry</span></div>
+      <div class="oss-what">HTTP utilities: empty entries in the excluded-URLs setting are now ignored.<br><a href="https://github.com/open-telemetry/opentelemetry-python-contrib/pull/5186" target="_blank" rel="noopener">PR #5186</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">any-llm<span class="oss-org">mozilla-ai</span></div>
+      <div class="oss-what">Three provider-conversion fixes: Bedrock tool results given as content parts no longer crash; Anthropic system messages given as text blocks are combined; Ollama reports <code>tool_calls</code> as the finish reason of a streamed tool call.<br><a href="https://github.com/mozilla-ai/any-llm/pull/1563" target="_blank" rel="noopener">PR #1563</a> · <a href="https://github.com/mozilla-ai/any-llm/pull/1564" target="_blank" rel="noopener">PR #1564</a> · <a href="https://github.com/mozilla-ai/any-llm/pull/1565" target="_blank" rel="noopener">PR #1565</a></div>
       <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
     </div>
     <div class="oss-row">
@@ -756,7 +766,7 @@ footer{
     <div class="oss-row">
       <div class="oss-repo">LXD<span class="oss-org">canonical</span></div>
       <div class="oss-what">User-Agent parser panic when the product name contains only spaces.<br><a href="https://github.com/canonical/lxd/pull/19250" target="_blank" rel="noopener">PR #19250</a></div>
-      <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
     </div>
     <div class="oss-row">
       <div class="oss-repo">harmony-py<span class="oss-org">nasa</span></div>
@@ -776,7 +786,7 @@ footer{
     <div class="oss-row">
       <div class="oss-repo">Syft<span class="oss-org">anchore</span></div>
       <div class="oss-what">SBOM generator: Go binaries built with a pre-release version (<code>v1.28.0-rc.1</code>) were reported as <code>v1.28.0-rc</code>, which skews vulnerability matching.<br><a href="https://github.com/anchore/syft/pull/5422" target="_blank" rel="noopener">PR #5422</a></div>
-      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
     </div>
     <div class="oss-row">
       <div class="oss-repo">Tailscale<span class="oss-org">tailscale</span></div>
@@ -786,7 +796,7 @@ footer{
     <div class="oss-row">
       <div class="oss-repo">containerd<span class="oss-org">containerd (CNCF)</span></div>
       <div class="oss-what">devmapper snapshotter: the error from reading a committed snapshot was overwritten, so <code>Mounts</code> returned no error and an empty mount.<br><a href="https://github.com/containerd/containerd/pull/14335" target="_blank" rel="noopener">PR #14335</a></div>
-      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
     </div>
     <div class="oss-row">
       <div class="oss-repo">Metaflow<span class="oss-org">netflix</span></div>
@@ -811,12 +821,12 @@ footer{
     <div class="oss-row">
       <div class="oss-repo">l2ss-py<span class="oss-org">podaac (NASA)</span></div>
       <div class="oss-what">Satellite data subsetting returned no data for granules entirely north of the equator when the requested area started south of it.<br><a href="https://github.com/podaac/l2ss-py/issues/464" target="_blank" rel="noopener">Issue #464</a> · <a href="https://github.com/podaac/l2ss-py/pull/465" target="_blank" rel="noopener">PR #465</a></div>
-      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
     </div>
     <div class="oss-row">
       <div class="oss-repo">udata (data.gouv.fr)<span class="oss-org">opendatateam</span></div>
-      <div class="oss-what">Temporal coverage dates without dashes (<code>2020/05/17</code>) became the whole year when harvesting CKAN catalogs.<br><a href="https://github.com/opendatateam/udata/issues/4006" target="_blank" rel="noopener">Issue #4006</a> · <a href="https://github.com/opendatateam/udata/pull/4007" target="_blank" rel="noopener">PR #4007</a></div>
-      <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
+      <div class="oss-what">Temporal coverage dates without dashes (<code>2020/05/17</code>) became the whole year when harvesting CKAN catalogs. Closed by the maintainer: they prefer to wait for real-world data first.<br><a href="https://github.com/opendatateam/udata/issues/4006" target="_blank" rel="noopener">Issue #4006</a> · <a href="https://github.com/opendatateam/udata/pull/4007" target="_blank" rel="noopener">PR #4007</a></div>
+      <div class="oss-status"><span class="proj-status s-private"><span class="s-dot"></span>Closed</span></div>
     </div>
     <div class="oss-row">
       <div class="oss-repo">kube-state-metrics<span class="oss-org">kubernetes</span></div>
@@ -839,7 +849,7 @@ footer{
       <div class="oss-status"><span class="proj-status s-private"><span class="s-dot"></span>Closed</span></div>
     </div>
   </div>
-  <p class="oss-note rv">Statuses checked on GitHub on 27/10/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
+  <p class="oss-note rv">Statuses checked on GitHub on 15/11/2026 · “Approved” = approved by a maintainer, not merged yet.</p>
 </section>
 
 <!-- CONTACT -->
