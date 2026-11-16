@@ -410,6 +410,7 @@ footer{
 .oss-intro{color:var(--muted2);font-size:0.88rem;line-height:1.85;max-width:760px;margin-bottom:2.5rem;}
 .oss-intro strong{color:var(--white);font-weight:600;}
 .oss-list{border-top:1px solid var(--border);}
+.oss-row.feat{border-left:3px solid var(--lime);padding-left:1rem;}
 .oss-row{display:grid;grid-template-columns:190px 1fr 150px;gap:2rem;align-items:start;padding:1.4rem 0;border-bottom:1px solid var(--border);}
 .oss-repo{font-family:'Space Mono',monospace;font-size:0.75rem;color:var(--white);line-height:1.5;}
 .oss-org{display:block;color:var(--muted);font-size:0.65rem;letter-spacing:0.05em;}
@@ -699,6 +700,41 @@ footer{
   (CLA, DCO, signed commits). These are functional and robustness bugs, not security vulnerabilities.</p>
   <div class="oss-list rv">
     <div class="oss-row">
+      <div class="oss-repo">git-sync<span class="oss-org">kubernetes</span></div>
+      <div class="oss-what">Panic when the git configuration contains a key without a value.<br><a href="https://github.com/kubernetes/git-sync/pull/1006" target="_blank" rel="noopener">PR #1006</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">gVisor<span class="oss-org">google</span></div>
+      <div class="oss-what"><code>runsc</code>: the lock error in <code>Container.Update</code> was ignored, then the deferred unlock could panic. The error is now returned.<br><a href="https://github.com/google/gvisor/pull/15632" target="_blank" rel="noopener">PR #15632</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
+    </div>
+    <div class="oss-row feat">
+      <div class="oss-repo">l2ss-py<span class="oss-org">podaac (NASA)</span></div>
+      <div class="oss-what">Satellite data subsetting returned no data for granules entirely north of the equator when the requested area started south of it.<br><a href="https://github.com/podaac/l2ss-py/issues/464" target="_blank" rel="noopener">Issue #464</a> · <a href="https://github.com/podaac/l2ss-py/pull/465" target="_blank" rel="noopener">PR #465</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
+    </div>
+    <div class="oss-row feat">
+      <div class="oss-repo">harmony-py<span class="oss-org">nasa</span></div>
+      <div class="oss-what">EDR requests sent timezone-aware datetimes as local time labelled UTC, shifting the requested time window.<br><a href="https://github.com/nasa/harmony-py/pull/155" target="_blank" rel="noopener">PR #155</a></div>
+      <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">AWS Powertools<span class="oss-org">aws-powertools (Python)</span></div>
+      <div class="oss-what">AppSync Events router: a wildcard route like <code>/default/users/*</code> also matched <code>/default/usersettings</code> (the slice cut one character too many).<br><a href="https://github.com/aws-powertools/powertools-lambda-python/issues/8545" target="_blank" rel="noopener">Issue #8545</a> · <a href="https://github.com/aws-powertools/powertools-lambda-python/pull/8546" target="_blank" rel="noopener">PR #8546</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">mysqld_exporter<span class="oss-org">prometheus</span></div>
+      <div class="oss-what">The binlog file number was read after the first dot instead of the last, giving 0 for dotted base names.<br><a href="https://github.com/prometheus/mysqld_exporter/pull/1095" target="_blank" rel="noopener">PR #1095</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
+    </div>
+    <div class="oss-row">
+      <div class="oss-repo">procfs<span class="oss-org">prometheus</span></div>
+      <div class="oss-what">Errors instead of panics on short <code>meminfo</code>, <code>ipvs</code> and <code>cpufreq</code> lines.<br><a href="https://github.com/prometheus/procfs/pull/880" target="_blank" rel="noopener">PR #880</a></div>
+      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
+    </div>
+    <div class="oss-row">
       <div class="oss-repo">opentelemetry-python<span class="oss-org">open-telemetry</span></div>
       <div class="oss-what">Jaeger propagator: an <code>uber-trace-id</code> header sent URL-encoded (<code>%3A</code> instead of <code>:</code>) was rejected and the trace context lost; it is now decoded before parsing.<br><a href="https://github.com/open-telemetry/opentelemetry-python/pull/5793" target="_blank" rel="noopener">PR #5793</a></div>
       <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
@@ -719,16 +755,6 @@ footer{
       <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
     </div>
     <div class="oss-row">
-      <div class="oss-repo">git-sync<span class="oss-org">kubernetes</span></div>
-      <div class="oss-what">Panic when the git configuration contains a key without a value.<br><a href="https://github.com/kubernetes/git-sync/pull/1006" target="_blank" rel="noopener">PR #1006</a></div>
-      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
-    </div>
-    <div class="oss-row">
-      <div class="oss-repo">gVisor<span class="oss-org">google</span></div>
-      <div class="oss-what"><code>runsc</code>: the lock error in <code>Container.Update</code> was ignored, then the deferred unlock could panic. The error is now returned.<br><a href="https://github.com/google/gvisor/pull/15632" target="_blank" rel="noopener">PR #15632</a></div>
-      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
-    </div>
-    <div class="oss-row">
       <div class="oss-repo">pynsee (INSEE)<span class="oss-org">inseefrlab</span></div>
       <div class="oss-what">The local cache key ignored keyword names: <code>endPeriod</code> queries could return cached <code>startPeriod</code> data.<br><a href="https://github.com/InseeFrLab/pynsee/issues/310" target="_blank" rel="noopener">Issue #310</a> · <a href="https://github.com/InseeFrLab/pynsee/pull/311" target="_blank" rel="noopener">PR #311</a></div>
       <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
@@ -739,23 +765,8 @@ footer{
       <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
     </div>
     <div class="oss-row">
-      <div class="oss-repo">AWS Powertools<span class="oss-org">aws-powertools (Python)</span></div>
-      <div class="oss-what">AppSync Events router: a wildcard route like <code>/default/users/*</code> also matched <code>/default/usersettings</code> (the slice cut one character too many).<br><a href="https://github.com/aws-powertools/powertools-lambda-python/issues/8545" target="_blank" rel="noopener">Issue #8545</a> · <a href="https://github.com/aws-powertools/powertools-lambda-python/pull/8546" target="_blank" rel="noopener">PR #8546</a></div>
-      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
-    </div>
-    <div class="oss-row">
       <div class="oss-repo">GoReleaser<span class="oss-org">goreleaser</span></div>
       <div class="oss-what">Docker v2: a global <code>ARG</code> referencing another <code>ARG</code> was not expanded, so the base-image annotation kept <code>${...}</code>.<br><a href="https://github.com/goreleaser/goreleaser/pull/7203" target="_blank" rel="noopener">PR #7203</a></div>
-      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
-    </div>
-    <div class="oss-row">
-      <div class="oss-repo">mysqld_exporter<span class="oss-org">prometheus</span></div>
-      <div class="oss-what">The binlog file number was read after the first dot instead of the last, giving 0 for dotted base names.<br><a href="https://github.com/prometheus/mysqld_exporter/pull/1095" target="_blank" rel="noopener">PR #1095</a></div>
-      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
-    </div>
-    <div class="oss-row">
-      <div class="oss-repo">procfs<span class="oss-org">prometheus</span></div>
-      <div class="oss-what">Errors instead of panics on short <code>meminfo</code>, <code>ipvs</code> and <code>cpufreq</code> lines.<br><a href="https://github.com/prometheus/procfs/pull/880" target="_blank" rel="noopener">PR #880</a></div>
       <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
     </div>
     <div class="oss-row">
@@ -767,11 +778,6 @@ footer{
       <div class="oss-repo">LXD<span class="oss-org">canonical</span></div>
       <div class="oss-what">User-Agent parser panic when the product name contains only spaces.<br><a href="https://github.com/canonical/lxd/pull/19250" target="_blank" rel="noopener">PR #19250</a></div>
       <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
-    </div>
-    <div class="oss-row">
-      <div class="oss-repo">harmony-py<span class="oss-org">nasa</span></div>
-      <div class="oss-what">EDR requests sent timezone-aware datetimes as local time labelled UTC, shifting the requested time window.<br><a href="https://github.com/nasa/harmony-py/pull/155" target="_blank" rel="noopener">PR #155</a></div>
-      <div class="oss-status"><span class="proj-status s-approved"><span class="s-dot"></span>Approved</span></div>
     </div>
     <div class="oss-row">
       <div class="oss-repo">Apache Airflow<span class="oss-org">apache</span></div>
@@ -817,11 +823,6 @@ footer{
       <div class="oss-repo">earthdata-varinfo<span class="oss-org">nasa</span></div>
       <div class="oss-what">NetCDF-4 <code>valid_range</code> arrays were ignored, so <code>ValidRanges</code> was missing from generated UMM-Var records.<br><a href="https://github.com/nasa/earthdata-varinfo/pull/115" target="_blank" rel="noopener">PR #115</a></div>
       <div class="oss-status"><span class="proj-status s-open"><span class="s-dot"></span>Open</span></div>
-    </div>
-    <div class="oss-row">
-      <div class="oss-repo">l2ss-py<span class="oss-org">podaac (NASA)</span></div>
-      <div class="oss-what">Satellite data subsetting returned no data for granules entirely north of the equator when the requested area started south of it.<br><a href="https://github.com/podaac/l2ss-py/issues/464" target="_blank" rel="noopener">Issue #464</a> · <a href="https://github.com/podaac/l2ss-py/pull/465" target="_blank" rel="noopener">PR #465</a></div>
-      <div class="oss-status"><span class="proj-status s-merged"><span class="s-dot"></span>Merged</span></div>
     </div>
     <div class="oss-row">
       <div class="oss-repo">udata (data.gouv.fr)<span class="oss-org">opendatateam</span></div>
