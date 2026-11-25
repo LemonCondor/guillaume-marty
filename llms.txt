@@ -6,9 +6,9 @@
 
 - [GitHub Security Researcher (GSR)](https://github.com/LemonCondor/github-security-researcher): open-source tool (Python, Apache-2.0) he designed to find bugs in open-source code. Static detectors for Go (tree-sitter), reproduction of every bug with a failing test, regression tests, deterministic decision engine (LLM analysis alone can never confirm a finding), more than 500 automated tests.
 
-## Open-source contributions (statuses checked on 2026-11-15)
+## Open-source contributions (statuses checked on 2026-11-25)
 
-Functional and robustness bugs found, reproduced and fixed, mostly with GSR:
+Functional and robustness bugs found with GSR and through code review, reproduced and fixed:
 
 - Kubernetes git-sync: [PR #1006](https://github.com/kubernetes/git-sync/pull/1006), merged.
 - Google gVisor: [PR #15632](https://github.com/google/gvisor/pull/15632), merged.
@@ -24,6 +24,8 @@ Functional and robustness bugs found, reproduced and fixed, mostly with GSR:
 - OpenTelemetry Python contrib: [PR #5186](https://github.com/open-telemetry/opentelemetry-python-contrib/pull/5186), merged.
 - Mozilla AI any-llm: [PR #1563](https://github.com/mozilla-ai/any-llm/pull/1563), [PR #1564](https://github.com/mozilla-ai/any-llm/pull/1564) and [PR #1565](https://github.com/mozilla-ai/any-llm/pull/1565), merged.
 - Canonical LXD: [PR #19250](https://github.com/canonical/lxd/pull/19250), merged.
+- Apache Arrow (Go): [PR #1680](https://github.com/apache/arrow-go/pull/1680), merged.
+- Apache Superset: [PR #45445](https://github.com/apache/superset/pull/45445), merged.
 - NASA harmony-py: [PR #155](https://github.com/nasa/harmony-py/pull/155), approved by a maintainer.
 - Apache Airflow: [PR #74631](https://github.com/apache/airflow/pull/74631), open.
 - Aqua Security Trivy: [PR #11398](https://github.com/aquasecurity/trivy/pull/11398), open.
