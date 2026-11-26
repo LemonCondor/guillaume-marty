@@ -6,7 +6,7 @@
 
 - [GitHub Security Researcher (GSR)](https://github.com/LemonCondor/github-security-researcher): open-source tool (Python, Apache-2.0) he designed to find bugs in open-source code. Static detectors for Go (tree-sitter), reproduction of every bug with a failing test, regression tests, deterministic decision engine (LLM analysis alone can never confirm a finding), more than 500 automated tests.
 
-## Open-source contributions (statuses checked on 2026-11-25)
+## Open-source contributions (statuses checked on 2026-11-26)
 
 Functional and robustness bugs found with GSR and through code review, reproduced and fixed:
 
@@ -22,7 +22,7 @@ Functional and robustness bugs found with GSR and through code review, reproduce
 - OpenTelemetry Python: [PR #5793](https://github.com/open-telemetry/opentelemetry-python/pull/5793), merged.
 - Pillow: [PR #10321](https://github.com/python-pillow/Pillow/pull/10321), [PR #10319](https://github.com/python-pillow/Pillow/pull/10319) and [PR #10320](https://github.com/python-pillow/Pillow/pull/10320), merged.
 - OpenTelemetry Python contrib: [PR #5186](https://github.com/open-telemetry/opentelemetry-python-contrib/pull/5186), merged.
-- Mozilla AI any-llm: [PR #1563](https://github.com/mozilla-ai/any-llm/pull/1563), [PR #1564](https://github.com/mozilla-ai/any-llm/pull/1564) and [PR #1565](https://github.com/mozilla-ai/any-llm/pull/1565), merged.
+- Mozilla AI any-llm: [PR #1563](https://github.com/mozilla-ai/any-llm/pull/1563), [PR #1564](https://github.com/mozilla-ai/any-llm/pull/1564), [PR #1565](https://github.com/mozilla-ai/any-llm/pull/1565) and [PR #1674](https://github.com/mozilla-ai/any-llm/pull/1674), merged.
 - Canonical LXD: [PR #19250](https://github.com/canonical/lxd/pull/19250), merged.
 - Apache Arrow (Go): [PR #1680](https://github.com/apache/arrow-go/pull/1680), merged.
 - Apache Superset: [PR #45445](https://github.com/apache/superset/pull/45445), merged.
